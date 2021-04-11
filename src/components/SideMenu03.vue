@@ -39,7 +39,7 @@ export default {
       {
         title: "Dashboard",
         icon: "mdi-view-dashboard-variant-outline",
-        to: "/",
+        to: "/dashboard03",
       },
       {
         title: "Solicitud de perfil",

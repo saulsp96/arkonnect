@@ -13,7 +13,7 @@
 <script>
 import Table01 from "../components/table01.vue";
 import Card from "../components/card.vue";
-import SideMenu from "../components/SideMenu.vue";
+import SideMenu from "../components/SideMenu01.vue";
 import TopBanner from "../components/TopBanner";
 export default {
   name: "dashboard01",
