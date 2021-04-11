@@ -2,6 +2,12 @@
 
 ## Consulta y gestion de talento interno
 
+## Corriendo en Heroku en:
+
+```
+https://saulivan852.herokuapp.com/
+```
+
 ## Antes de correr el proyecto
 
 ```

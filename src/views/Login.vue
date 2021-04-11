@@ -130,7 +130,7 @@ export default {
     show3: false,
     whatsNext: [
       {
-        text: "Sitio Oficial",
+        text: "Sitio web",
         href: "https://www.arkusnexus.com/",
       },
       {
