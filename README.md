@@ -1,6 +1,8 @@
-# ark01
+# Arkonnect
 
-## Project setup
+## Consulta y gestion de talento interno
+
+## Antes de correr el proyecto
 
 ```
 npm install
@@ -10,7 +12,7 @@ To install google-spreadsheet
 npm install --save google-spreadsheet
 ```
 
-### Compiles and hot-reloads for development
+### Iniciar el servidor - puerto :8080
 
 ```
 npm run serve
