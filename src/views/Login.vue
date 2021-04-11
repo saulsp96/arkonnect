@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container style="max-width: 350px; position: relative;">
     <v-row class="text-center">
       <v-col cols="12">
         <v-img
@@ -16,7 +16,7 @@
         </h1>
 
         <p class="subheading font-weight-regular">
-          Consulta y gestion de talento interno
+          Gestión y consulta de talento interno.
         </p>
       </v-col>
       <v-col class="mb-5" cols="12">
@@ -24,7 +24,7 @@
           <v-row class="text-center">
             <v-col cols="12">
               <v-text-field
-                label="User"
+                label="Usuario"
                 v-model="user.username"
                 outlined
               ></v-text-field>
@@ -36,23 +36,23 @@
                 :type="show3 ? 'text' : 'password'"
                 name="input-10-2"
                 v-model="user.password"
-                label="Password"
+                label="Contraseña"
                 class="input-group--focused"
                 @click:append="show3 = !show3"
               ></v-text-field>
             </v-col>
             <v-col cols="12">
               <v-btn v-on:click="handleSubmit" color="primary" elevation="2"
-                >Login</v-btn
+                >Iniciar sesión</v-btn
               >
             </v-col>
           </v-row>
         </v-form>
       </v-col>
       <v-col class="mb-6" cols="12">
-        <h2 class="headline font-weight-bold mb-3">
-          Arkus Nexus
-        </h2>
+        <h5 class="mb-3">
+         © Arkus Nexus. Todos los derechos reservados.
+        </h5>
 
         <v-row justify="center">
           <a
@@ -71,6 +71,13 @@
 </template>
 
 <script>
+ import Vue from 'vue';
+    // Import component
+ import Loading from 'vue-loading-overlay';
+    // Import stylesheet
+    import 'vue-loading-overlay/dist/vue-loading.css';
+    // Init plugin
+    Vue.use(Loading);
 export default {
   name: "Login",
   methods: {
@@ -123,14 +130,26 @@ export default {
       console.log("Corrido" + usuarios);
       console.log(this.user.username + " " + this.user.password);
       console.log("Submit");
+
+       let loader = this.$loading.show({
+                  // Optional parameters
+                  container: this.fullPage ? null : this.$refs.formContainer,
+                  canCancel: true,
+                  onCancel: this.onCancel,
+                });
+                // simulate AJAX
+                setTimeout(() => {
+                  loader.hide()
+                },1100)                 
     },
   },
   data: () => ({
+    fullPage: false,
     user: [{ username: "", password: "" }],
     show3: false,
     whatsNext: [
       {
-        text: "Sitio web",
+        text: "Sitio Oficial",
         href: "https://www.arkusnexus.com/",
       },
       {
@@ -138,10 +157,11 @@ export default {
         href: "https://www.arkusnexus.com/blog",
       },
       {
-        text: "Youtube",
+        text: "YouTube",
         href: "https://www.youtube.com/channel/UCh6JGpFXXdfCNtp4ivU65ow",
       },
     ],
   }),
+  
 };
 </script>
