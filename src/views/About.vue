@@ -3,7 +3,8 @@
     <TopBanner />
     <SideMenu />
     <Card />
-    <h1>This is an about page</h1>
+    <v-divider></v-divider>
+    <h3>Aqui van los filtros y busqueda :p/About</h3>
     <v-divider></v-divider>
     <v-container><Table01 /></v-container>
   </div>
