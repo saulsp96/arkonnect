@@ -95,7 +95,25 @@ export default {
           this.user.password == userTable[i].password
         ) {
           console.log("Success!");
-          this.$router.push("/");
+          var userRole = userTable[i].Role;
+          console.log("Usuario es: " + userTable[i].Puesto);
+          console.log("Usuario es: " + userRole);
+          switch (userRole) {
+            case "0":
+              //Admin
+              console.log("Antes");
+              this.$router.push("/dashboard01").catch(() => {});
+              console.log("Despues");
+              break;
+            case "1":
+              //Ops
+              this.$router.push("/dashboard02").catch(() => {});
+              break;
+            case "2":
+              //Recursos humanos
+              this.$router.push("/dashboard03").catch(() => {});
+              break;
+          }
           break;
         } else console.log("Invalid credz bro!");
       }

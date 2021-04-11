@@ -1,20 +1,33 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import dashboard01 from "../views/dashboard01.vue";
+import dashboard02 from "../views/dashboard02.vue";
+import dashboard03 from "../views/dashboard03.vue";
 import Login from "../views/Login.vue";
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
+    name: "Login",
+    component: Login,
+  },
+  {
+    path: "/dashboard01",
     name: "dashboard01",
     component: dashboard01,
   },
   {
-    path: "/Login",
-    name: "Login",
-    component: Login,
+    path: "/dashboard02",
+    name: "dashboard02",
+    component: dashboard02,
   },
+  {
+    path: "/dashboard03",
+    name: "dashboard03",
+    component: dashboard03,
+  },
+
   {
     path: "/about",
     name: "About",

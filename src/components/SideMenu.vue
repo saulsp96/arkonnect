@@ -46,7 +46,7 @@ export default {
         icon: "mdi-account-arrow-left-outline",
         to: "/about",
       },
-      { title: "Login", icon: "mdi-logout", to: "/login" },
+      { title: "Login", icon: "mdi-logout", to: "/" },
     ],
   }),
   watch: {

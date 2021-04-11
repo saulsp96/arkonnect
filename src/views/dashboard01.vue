@@ -4,6 +4,7 @@
     <SideMenu />
     <Card />
     <v-divider></v-divider>
+    <h2>Dashboard - Admin</h2>
     <h3>Aqui van los filtros y busqueda :p</h3>
     <v-divider></v-divider>
     <v-container><Table01 /></v-container>
