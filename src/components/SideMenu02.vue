@@ -1,6 +1,12 @@
 <template>
   <v-container>
-    <v-navigation-drawer v-model="drawer" app>
+    <v-navigation-drawer v-model="drawer" permanent
+        expand-on-hover app>
+        <v-list-item class="px-2">
+            <v-list-item-avatar>
+              <v-img src="./arkus.png"></v-img>
+            </v-list-item-avatar>
+          </v-list-item>
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="title">ARKONECT</v-list-item-title>
@@ -46,7 +52,7 @@ export default {
         icon: "mdi-account-arrow-left-outline",
         to: "/about",
       },
-      { title: "Login", icon: "mdi-logout", to: "/" },
+      { title: "Cerrar sesión", icon: "mdi-logout", to: "/" },
     ],
   }),
   watch: {
