@@ -51,7 +51,7 @@
       </v-col>
       <v-col class="mb-6" cols="12">
         <h5 class="mb-3">
-         © Arkus Nexus. Todos los derechos reservados.
+          © Arkus Nexus. Todos los derechos reservados.
         </h5>
 
         <v-row justify="center">
@@ -71,13 +71,13 @@
 </template>
 
 <script>
- import Vue from 'vue';
-    // Import component
- import Loading from 'vue-loading-overlay';
-    // Import stylesheet
-    import 'vue-loading-overlay/dist/vue-loading.css';
-    // Init plugin
-    Vue.use(Loading);
+import Vue from "vue";
+// Import component
+import Loading from "vue-loading-overlay";
+// Import stylesheet
+import "vue-loading-overlay/dist/vue-loading.css";
+// Init plugin
+Vue.use(Loading);
 export default {
   name: "Login",
   methods: {
@@ -131,16 +131,16 @@ export default {
       console.log(this.user.username + " " + this.user.password);
       console.log("Submit");
 
-       let loader = this.$loading.show({
-                  // Optional parameters
-                  container: this.fullPage ? null : this.$refs.formContainer,
-                  canCancel: true,
-                  onCancel: this.onCancel,
-                });
-                // simulate AJAX
-                setTimeout(() => {
-                  loader.hide()
-                },1100)                 
+      let loader = this.$loading.show({
+        // Optional parameters
+        container: this.fullPage ? null : this.$refs.formContainer,
+        canCancel: true,
+        onCancel: this.onCancel,
+      });
+      // simulate AJAX
+      setTimeout(() => {
+        loader.hide();
+      }, 1100);
     },
   },
   data: () => ({
@@ -162,6 +162,5 @@ export default {
       },
     ],
   }),
-  
 };
 </script>

@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import Vue from "vue";
 import HelloWorld from "./components/HelloWorld";
 
 export default {
@@ -16,9 +17,11 @@ export default {
   components: {
     HelloWorld,
   },
-
-  data: () => ({
-    drawer: null,
-  }),
+  data() {
+    return {
+      drawer: null,
+      Rows: Vue.Rows,
+    };
+  },
 };
 </script>
