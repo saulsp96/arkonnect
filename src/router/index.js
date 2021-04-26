@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import dashboard01 from "../views/dashboard01.vue";
 import dashboard02 from "../views/dashboard02.vue";
 import dashboard03 from "../views/dashboard03.vue";
+import dashboard04 from "../views/dashboard04.vue";
 import Login from "../views/Login.vue";
 Vue.use(VueRouter);
 
@@ -26,6 +27,11 @@ const routes = [
     path: "/dashboard03",
     name: "dashboard03",
     component: dashboard03,
+  },
+  {
+    path: "/dashboard04",
+    name: "dashboard04",
+    component: dashboard04,
   },
 
   {
