@@ -94,7 +94,6 @@ export default {
 
       const usersSheet = documento.sheetsByIndex[1];
       const userTable = await usersSheet.getRows();
-      console.log("Runned: " + userTable.length);
       var i;
       for (i = 0; i < userTable.length; i++) {
         if (
@@ -103,14 +102,10 @@ export default {
         ) {
           console.log("Success!");
           var userRole = userTable[i].Role;
-          console.log("Usuario es: " + userTable[i].Puesto);
-          console.log("Usuario es: " + userRole);
           switch (userRole) {
             case "0":
               //Admin
-              console.log("Antes");
               this.$router.push("/dashboard01").catch(() => {});
-              console.log("Despues");
               break;
             case "1":
               //Ops
@@ -127,10 +122,6 @@ export default {
     },
     handleSubmit() {
       var usuarios = this.getUsers();
-      console.log("Corrido" + usuarios);
-      console.log(this.user.username + " " + this.user.password);
-      console.log("Submit");
-
       let loader = this.$loading.show({
         // Optional parameters
         container: this.fullPage ? null : this.$refs.formContainer,

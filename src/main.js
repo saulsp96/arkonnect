@@ -14,7 +14,6 @@ new Vue({
   store,
   vuetify,
   beforeMount: async function() {
-    console.log("This is on mounted");
     const { GoogleSpreadsheet } = require("google-spreadsheet");
 
     const credenciales = require("./json/credenciales.json");
