@@ -112,8 +112,12 @@ export default {
               this.$router.push("/dashboard02").catch(() => {});
               break;
             case "2":
-              //Recursos humanos
+              //Reclutamiento y Comercial
               this.$router.push("/dashboard03").catch(() => {});
+              break;
+            case "3":
+              //Recursos humanos
+              this.$router.push("/dashboard04").catch(() => {});
               break;
           }
           break;
