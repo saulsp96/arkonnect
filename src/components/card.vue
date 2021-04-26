@@ -14,13 +14,13 @@
         <v-container>
           <v-row
             ><v-col>
-              <p class="mini">23</p>
+              <p class="minijr">23</p>
             </v-col>
             <v-col>
-              <p class="mini">23</p>
+              <p class="minimid">23</p>
             </v-col>
             <v-col>
-              <p class="mini">23</p>
+              <p class="minisr">23</p>
             </v-col>
           </v-row>
         </v-container>
@@ -31,11 +31,26 @@
 <script>
 export default {
   name: "card",
+  props: {
+    cardInfo: [],
+  },
 };
 </script>
 <style scoped>
-.mini {
+.minijr {
   font-size: 100%;
+  font-weight: bold;
+  color: lightskyblue;
+}
+.minimid {
+  font-size: 100%;
+  font-weight: bold;
+  color: MediumSeaGreen;
+}
+.minisr {
+  font-size: 100%;
+  font-weight: bold;
+  color: rgb(248, 73, 73);
 }
 .big {
   font-size: 60px;

@@ -2,7 +2,25 @@
   <div class="about">
     <TopBanner />
     <SideMenu />
-    <Card />
+    <v-container>
+      <v-row
+        ><v-col>
+          <Card />
+        </v-col>
+        <v-col>
+          <Card />
+        </v-col>
+        <v-col>
+          <Card />
+        </v-col>
+        <v-col>
+          <Card />
+        </v-col>
+        <v-col>
+          <Card />
+        </v-col>
+      </v-row>
+    </v-container>
     <v-divider></v-divider>
     <h2>Dashboard - Operaciones</h2>
     <h3>Aqui van los filtros y busqueda :p</h3>

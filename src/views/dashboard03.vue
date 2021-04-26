@@ -2,9 +2,27 @@
   <div class="about">
     <TopBanner />
     <SideMenu />
-    <Card />
+    <v-container>
+      <v-row
+        ><v-col>
+          <Card />
+        </v-col>
+        <v-col>
+          <Card />
+        </v-col>
+        <v-col>
+          <Card />
+        </v-col>
+        <v-col>
+          <Card />
+        </v-col>
+        <v-col>
+          <Card />
+        </v-col>
+      </v-row>
+    </v-container>
     <v-divider></v-divider>
-    <h2>Dashboard - Recursos humanos</h2>
+    <h2>Dashboard - Reclutamiento y comercial</h2>
     <h3>Aqui van los filtros y busqueda :p</h3>
     <v-divider></v-divider>
     <v-container><Table01 /></v-container>
