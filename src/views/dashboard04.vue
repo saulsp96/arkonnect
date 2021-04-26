@@ -30,7 +30,7 @@
 </template>
 <script>
 import Table01 from "../components/table01.vue";
-import Card from "../components/card.vue";
+import Card from "../components/cardrh.vue";
 import SideMenu from "../components/SideMenu03.vue";
 import TopBanner from "../components/TopBanner";
 export default {
