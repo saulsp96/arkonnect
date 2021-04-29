@@ -48,7 +48,7 @@ export default {
         {
           activoMT: "Si",
           disponibleops: "Si",
-          oficina: "CHICH",
+          oficina: "CHIH",
           cv: "Link",
           correo: "correo@correo.com",
           nombre: "Aguirre Rodriguez Roberto",
@@ -71,7 +71,7 @@ export default {
         {
           activoMT: "Si",
           disponibleops: "Si",
-          oficina: "CHICH",
+          oficina: "CHIH",
           cv: "Link",
           correo: "correo@correo.com",
           nombre: "Aguirre Rodriguez Roberto",
@@ -94,7 +94,7 @@ export default {
         {
           activoMT: "Si",
           disponibleops: "Si",
-          oficina: "CHICH",
+          oficina: "CHIH",
           cv: "Link",
           correo: "correo@correo.com",
           nombre: "Aguirre Rodriguez Roberto",
@@ -117,7 +117,7 @@ export default {
         {
           activoMT: "Si",
           disponibleops: "Si",
-          oficina: "CHICH",
+          oficina: "CHIH",
           cv: "Link",
           correo: "correo@correo.com",
           nombre: "Aguirre Rodriguez Roberto",
@@ -140,7 +140,7 @@ export default {
         {
           activoMT: "Si",
           disponibleops: "Si",
-          oficina: "CHICH",
+          oficina: "CHIH",
           cv: "Link",
           correo: "correo@correo.com",
           nombre: "Aguirre Rodriguez Roberto",
@@ -163,7 +163,7 @@ export default {
         {
           activoMT: "Si",
           disponibleops: "Si",
-          oficina: "CHICH",
+          oficina: "CHIH",
           cv: "Link",
           correo: "correo@correo.com",
           nombre: "Aguirre Rodriguez Roberto",
@@ -186,7 +186,7 @@ export default {
         {
           activoMT: "Si",
           disponibleops: "Si",
-          oficina: "CHICH",
+          oficina: "CHIH",
           cv: "Link",
           correo: "correo@correo.com",
           nombre: "Aguirre Rodriguez Roberto",
@@ -209,7 +209,7 @@ export default {
         {
           activoMT: "Si",
           disponibleops: "Si",
-          oficina: "CHICH",
+          oficina: "CHIH",
           cv: "Link",
           correo: "correo@correo.com",
           nombre: "Aguirre Rodriguez Roberto",
@@ -232,7 +232,7 @@ export default {
         {
           activoMT: "Si",
           disponibleops: "Si",
-          oficina: "CHICH",
+          oficina: "CHIH",
           cv: "Link",
           correo: "correo@correo.com",
           nombre: "Aguirre Rodriguez Roberto",
