@@ -23,12 +23,13 @@
     </v-container>
     <v-divider></v-divider>
     <h2>Dashboard - Operaciones</h2>
-    <h3>Aqui van los filtros y busqueda :p</h3>
+    <SearchBar />
     <v-divider></v-divider>
     <v-container><Table01 /></v-container>
   </div>
 </template>
 <script>
+import SearchBar from "../components/search.vue";
 import Table01 from "../components/table01.vue";
 import Card from "../components/card.vue";
 import SideMenu from "../components/SideMenu02.vue";
@@ -40,6 +41,7 @@ export default {
     TopBanner,
     Card,
     Table01,
+    SearchBar,
   },
 };
 </script>
