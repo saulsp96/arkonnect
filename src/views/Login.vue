@@ -67,6 +67,23 @@
         </v-row>
       </v-col>
     </v-row>
+    <v-dialog v-model="dialog" max-width="290">
+      <v-card>
+        <v-card-title class="headline">
+          Credenciales Invalidas(':
+        </v-card-title>
+
+        <v-card-text>
+          Intenta de nuevo o ponte en contacto con el admin del sitio :p
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn color="green darken-1" text @click="dialog = false">
+            Ok
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </v-container>
 </template>
 
@@ -121,7 +138,10 @@ export default {
               break;
           }
           break;
-        } else console.log("Invalid credz bro!");
+        } else {
+          console.log("Invalid credz bro!");
+          this.dialog = true;
+        }
       }
     },
     handleSubmit() {
@@ -140,6 +160,7 @@ export default {
   },
   data: () => ({
     fullPage: false,
+    dialog: false,
     user: [{ username: "", password: "" }],
     show3: false,
     whatsNext: [
