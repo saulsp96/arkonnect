@@ -44,6 +44,9 @@ new Vue({
       $Rows[i] = await $sheets[i].getRows();
       console.log("Imprime Rows: " + $sheets[i].title);
       console.log($Rows[i]);
+      console.log("This is increment:");
+      store.commit("increment");
+      console.log(store.state.count);
     }
   },
   data() {
