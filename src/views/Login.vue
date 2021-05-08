@@ -98,19 +98,8 @@ Vue.use(Loading);
 export default {
   name: "Login",
   methods: {
-    getUsers: async function() {
-      const { GoogleSpreadsheet } = require("google-spreadsheet");
-
-      const credenciales = require("../json/credenciales.json");
-
-      let googleId = "1CGQu-Flh5LyeIj4JMyu6TyYRgj3nUcJxvNBuy0lGyaA";
-
-      const documento = new GoogleSpreadsheet(googleId);
-      await documento.useServiceAccountAuth(credenciales);
-      await documento.loadInfo();
-
-      const usersSheet = documento.sheetsByIndex[1];
-      const userTable = await usersSheet.getRows();
+    getUsers: function() {
+      const userTable = this.$store.state.Rows[1];
       var i;
       for (i = 0; i < userTable.length; i++) {
         if (
