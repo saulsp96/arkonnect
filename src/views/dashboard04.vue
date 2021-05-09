@@ -22,14 +22,13 @@
       </v-row>
     </v-container>
     <v-divider></v-divider>
-    <h2>Dashboard - Recursos Humanos</h2>
     <SearchBar />
     <v-divider></v-divider>
     <v-container><Table01 /></v-container>
   </div>
 </template>
 <script>
-import SearchBar from "../components/search.vue";
+import SearchBar from "../components/SearchComp.vue";
 import Table01 from "../components/table01.vue";
 import Card from "../components/cardrh.vue";
 import SideMenu from "../components/SideMenu03.vue";

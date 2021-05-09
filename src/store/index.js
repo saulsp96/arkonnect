@@ -9,6 +9,43 @@ export default new Vuex.Store({
     sheets: [],
     usuarios: [],
     username: "",
+    headers: [
+      {
+        text: "ActivoMT",
+        align: "start",
+        //sortable: false,
+        value: "Activo MT",
+      },
+      { text: "Disponible OPS", value: "Disponible para OPS" },
+      { text: "Oficina", value: "Oficina" },
+      { text: "CV", value: "CV" },
+      { text: "Correo", value: "Correo" },
+      { text: "Nombre", value: "Nombre" },
+      { text: "Role", value: "Role" },
+      { text: "TechSkills", value: "TechSkills" },
+      { text: "Ingles", value: "Ingles" },
+      { text: "Calificacion OPS", value: "Calificacion \nOPS" },
+      { text: "Equipo", value: "Equipo" },
+      { text: "Equipo futuro", value: "Equipo \nFuturo" },
+      {
+        text: "Fecha Inicio equipo actual",
+        value: "Fecha Inicio \nequipo actual",
+      },
+      { text: "Main #1", value: "Main #1" },
+      { text: "Main #2", value: "Main #2" },
+      { text: "Secondary #1", value: "Secondary \n#1" },
+      { text: "Secondary #2", value: "Secondary \n#2" },
+      { text: "Secondary #3", value: "Secondary \n#3" },
+      {
+        text: "Target Tech Main \n(Training)",
+        value: "Target Tech Main \n(Training)",
+      },
+      {
+        text: "Next Tech Secondary",
+        value: "Next Tech Secondary (Training)",
+      },
+      { text: "Notes", value: "Notas" },
+    ],
   },
   mutations: {},
   actions: {},
@@ -18,39 +55,9 @@ export default new Vuex.Store({
       state.usuarios = state.Rows[0];
       for (var i = 0; i < state.usuarios.length; i++) {
         var usuario = state.usuarios[i];
-        console.log(usuario.Nombre);
         var userReady = [];
         userReady = usuario;
-        console.log(userReady);
         usersTable[i] = userReady;
-        console.log(usersTable);
-        // userReady[i] = usuario["Activo MT"];
-        // userReady[i] = usuario.CV;
-        // userReady[i] = usuario["Calificacion OPS"];
-        // userReady[i] = usuario["Equipo\nFuturo"];
-        // userReady[i] = usuario["Fecha Inicio\nequipo actual"];
-        // userReady[i] = usuario.Ingles;
-        // userReady[i] = usuario["Main #1"];
-        // userReady[i] = usuario["Main #2"];
-        // userReady[i] = usuario["Next Tech Secondary\n(Training)"];
-        // userReady[i] = usuario.Nombre;
-        // userReady[i] = usuario.Notas;
-        // userReady[i] = usuario.Oficina;
-        // userReady[i] = usuario.Role;
-        // userReady[i] = usuario["Secondary\n#1"];
-        // userReady[i] = usuario["Secondary\n#2"];
-        // userReady[i] = usuario["Secondary\n#3"];
-        // userReady[i] = usuario["Target Tech Main\n(Training)"];
-        // userReady[i] = usuario.TechSkills;
-        // userReady[i] = usuario.Nombre;
-        // userReady[i] = usuario.Nombre;
-        // userReady[i] = usuario.Nombre;
-        //   console.log(state.usuarios[i]);
-        //   state.usuario[i] = state.usuarios[i];
-        //   for (var x = 0; x < 21; x++) {
-        //     state.usersTable[x] = state.usuario[x];
-        //     console.log(state.usersTable[x]);
-        //   }
       }
       return usersTable;
     },

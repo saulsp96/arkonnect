@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-data-table
-      :headers="headers"
+      :headers="Headers"
       :items="Talento"
       :items-per-page="Talento.length"
       class="elevation-1"
@@ -14,43 +14,7 @@
 export default {
   data() {
     return {
-      headers: [
-        {
-          text: "ActivoMT",
-          align: "start",
-          //sortable: false,
-          value: "Activo MT",
-        },
-        { text: "Disponible OPS", value: "Disponible para OPS" },
-        { text: "Oficina", value: "Oficina" },
-        { text: "CV", value: "CV" },
-        { text: "Correo", value: "Correo" },
-        { text: "Nombre", value: "Nombre" },
-        { text: "Role", value: "Role" },
-        { text: "TechSkills", value: "TechSkills" },
-        { text: "Ingles", value: "Ingles" },
-        { text: "Calificacion OPS", value: "Calificacion \nOPS" },
-        { text: "Equipo", value: "Equipo" },
-        { text: "Equipo futuro", value: "Equipo \nFuturo" },
-        {
-          text: "Fecha Inicio equipo actual",
-          value: "Fecha Inicio \nequipo actual",
-        },
-        { text: "Main #1", value: "Main #1" },
-        { text: "Main #2", value: "Main #2" },
-        { text: "Secondary #1", value: "Secondary \n#1" },
-        { text: "Secondary #2", value: "Secondary \n#2" },
-        { text: "Secondary #3", value: "Secondary \n#3" },
-        {
-          text: "Target Tech Main \n(Training)",
-          value: "Target Tech Main \n(Training)",
-        },
-        {
-          text: "Next Tech Secondary",
-          value: "Next Tech Secondary (Training)",
-        },
-        { text: "Notes", value: "Notas" },
-      ],
+      Headers: this.$store.state.headers,
       Talento: this.$store.getters.returnTalent,
     };
   },

@@ -33,8 +33,6 @@ export default {
       this.$store.state.sheets[i] = documento.sheetsByIndex[i];
       console.log("Sheet obtenido: " + this.$store.state.sheets[i].title);
       this.$store.state.Rows[i] = await this.$store.state.sheets[i].getRows();
-      console.log("Imprime Rows" + this.$store.state.sheets[i].title);
-      console.log(this.$store.state.Rows[i]);
     }
   },
   data() {
