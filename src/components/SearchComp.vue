@@ -36,10 +36,13 @@
 export default {
   data() {
     return {
-      search: "",
+      search: this.$store.state.search,
       keys: this.$store.state.headers,
       sortBy: "name",
       sortDesc: false,
+      methods: {
+        handlesearch() {},
+      },
     };
   },
 };

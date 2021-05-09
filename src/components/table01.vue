@@ -3,6 +3,7 @@
     <v-data-table
       :headers="Headers"
       :items="Talento"
+      :search="Search"
       :items-per-page="Talento.length"
       class="elevation-1"
     >
@@ -14,6 +15,7 @@
 export default {
   data() {
     return {
+      Search: this.$store.state.search,
       Headers: this.$store.state.headers,
       Talento: this.$store.getters.returnTalent,
     };

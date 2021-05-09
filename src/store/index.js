@@ -9,6 +9,7 @@ export default new Vuex.Store({
     sheets: [],
     usuarios: [],
     username: "",
+    search: "",
     headers: [
       {
         text: "ActivoMT",
