@@ -106,7 +106,6 @@ export default {
           this.user.username == userTable[i].username &&
           this.user.password == userTable[i].password
         ) {
-          console.log("Success!");
           var userRole = userTable[i].Role;
           switch (userRole) {
             case "0":
@@ -128,7 +127,6 @@ export default {
           }
           break;
         } else {
-          console.log("Invalid credz bro!");
           this.dialog = true;
         }
       }
@@ -144,7 +142,7 @@ export default {
       // simulate AJAX
       setTimeout(() => {
         loader.hide();
-      }, 1100);
+      });
     },
   },
   data: () => ({

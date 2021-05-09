@@ -17,7 +17,7 @@ export default {
   components: {
     HelloWorld,
   },
-  created: async function() {
+  mounted: async function() {
     const { GoogleSpreadsheet } = require("google-spreadsheet");
 
     const credenciales = require("./json/credenciales.json");
