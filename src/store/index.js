@@ -8,21 +8,22 @@ export default new Vuex.Store({
     Rows: [],
     sheets: [],
     usuarios: [],
-    usuario: [],
+    username: "",
   },
   mutations: {},
   actions: {},
   getters: {
     returnTalent(state) {
+      var usersTable = [];
       state.usuarios = state.Rows[0];
       for (var i = 0; i < state.usuarios.length; i++) {
         var usuario = state.usuarios[i];
         console.log(usuario.Nombre);
         var userReady = [];
-        userReady = usuario._rawData;
+        userReady = usuario;
         console.log(userReady);
-        var usersTable = [];
         usersTable[i] = userReady;
+        console.log(usersTable);
         // userReady[i] = usuario["Activo MT"];
         // userReady[i] = usuario.CV;
         // userReady[i] = usuario["Calificacion OPS"];

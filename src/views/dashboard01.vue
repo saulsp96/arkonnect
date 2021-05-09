@@ -22,7 +22,7 @@
       </v-row>
     </v-container>
     <v-divider></v-divider>
-    <h2>Dashboard</h2>
+    <h2>{{ "Bienvenido " + this.$store.state.username }}</h2>
     <SearchBar />
     <v-divider></v-divider>
     <v-container><Table01 /></v-container>

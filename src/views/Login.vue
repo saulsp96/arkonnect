@@ -100,6 +100,7 @@ export default {
   methods: {
     getUsers: function() {
       const userTable = this.$store.state.Rows[1];
+
       var i;
       for (i = 0; i < userTable.length; i++) {
         if (
@@ -107,6 +108,7 @@ export default {
           this.user.password == userTable[i].password
         ) {
           var userRole = userTable[i].Role;
+          this.$store.state.username = userTable[i].Nombre;
           switch (userRole) {
             case "0":
               //Admin
