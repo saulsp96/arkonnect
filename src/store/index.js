@@ -51,6 +51,7 @@ export default new Vuex.Store({
   mutations: {},
   actions: {},
   getters: {
+    returnTotales() {},
     returnTalent(state) {
       var usersTable = [];
       state.usuarios = state.Rows[0];
