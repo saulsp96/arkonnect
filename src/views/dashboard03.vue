@@ -3,23 +3,16 @@
     <TopBanner />
     <SideMenu />
     <v-container>
-      <v-row
-        ><v-col>
-          <Card />
-        </v-col>
-        <v-col>
-          <Card />
-        </v-col>
-        <v-col>
-          <Card />
-        </v-col>
-        <v-col>
-          <Card />
-        </v-col>
-        <v-col>
-          <Card />
-        </v-col>
-      </v-row>
+      <v-expansion-panels>
+        <v-expansion-panel>
+          <v-expansion-panel-header>
+            Tarjetas
+          </v-expansion-panel-header>
+          <v-expansion-panel-content>
+            <Card />
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+      </v-expansion-panels>
     </v-container>
     <v-divider></v-divider>
     <SearchBar />

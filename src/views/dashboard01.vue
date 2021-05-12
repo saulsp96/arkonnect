@@ -2,13 +2,22 @@
   <div class="about">
     <TopBanner />
     <SideMenu />
-    <v-container>
-      <Card />
+    <v-container v-if="isWaiting">
+      <v-expansion-panels>
+        <v-expansion-panel>
+          <v-expansion-panel-header>
+            Tarjetas
+          </v-expansion-panel-header>
+          <v-expansion-panel-content>
+            <Card />
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+      </v-expansion-panels>
     </v-container>
     <v-divider></v-divider>
     <SearchBar />
     <v-divider></v-divider>
-    <v-container><Table01 /></v-container>
+    <v-container v-if="isWaiting"><Table01 /></v-container>
   </div>
 </template>
 <script>
@@ -25,6 +34,11 @@ export default {
     Card,
     Table01,
     SearchBar,
+  },
+  data() {
+    return {
+      isWaiting: this.$store.state.isWaiting,
+    };
   },
 };
 </script>

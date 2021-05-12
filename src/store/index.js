@@ -13,7 +13,7 @@ export default new Vuex.Store({
       { title: "QA", summary: 99 },
     ],
     sheets: [],
-    flagCard: true,
+    isWaiting: false,
     usuarios: [],
     username: "",
     search: "",
@@ -66,52 +66,33 @@ export default new Vuex.Store({
       state.usuarios = state.Rows[0];
       var dataItem = {};
       var dataCards = [];
-      var Titles = [];
+      var Titles = ["DEV", "QA", "SM", "PO"];
       var Title = "";
       //var SumCount = 0;
       var RoleCount = [0, 0, 0, 0];
       //usersTable = this.$store.getters.returnTalent;
-      console.log(state.usuarios.length);
       for (var i = 0; i < state.usuarios.length; i++) {
-        console.log("returnTotalesgetter - For");
         var usuario = state.usuarios[i];
-        console.log(usuario);
         Title = usuario.Role;
-        Titles[i] = Title;
-        console.log(Title);
         switch (Title) {
           case "DEV":
             RoleCount[0] = RoleCount[0] + 1;
-            console.log(RoleCount[0]);
-            console.log("This is Dev case");
             break;
           case "QA":
             RoleCount[1] = RoleCount[1] + 1;
-            console.log(RoleCount[1]);
-            console.log("This is QA case");
             break;
           case "SM":
             RoleCount[2] = RoleCount[2] + 1;
-            console.log(RoleCount[2]);
-            console.log("This is  SM case");
             break;
           case "PO":
             RoleCount[3] = RoleCount[3] + 1;
-            console.log(RoleCount[3]);
-            console.log("This is  PO case");
             break;
         }
       }
       for (var x = 0; x < 4; x++) {
         dataItem = { title: Titles[x], summary: RoleCount[x] };
-        console.log(dataItem);
         dataCards[x] = dataItem;
       }
-      console.log("This is summary");
-      console.log(RoleCount[0]);
-      console.log(RoleCount[1]);
-      console.log(RoleCount[2]);
-      console.log(RoleCount[3]);
 
       return dataCards;
     },
