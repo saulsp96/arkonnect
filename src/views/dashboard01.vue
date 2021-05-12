@@ -3,23 +3,7 @@
     <TopBanner />
     <SideMenu />
     <v-container>
-      <v-row
-        ><v-col>
-          <Card />
-        </v-col>
-        <v-col>
-          <Card />
-        </v-col>
-        <v-col>
-          <Card />
-        </v-col>
-        <v-col>
-          <Card />
-        </v-col>
-        <v-col>
-          <Card />
-        </v-col>
-      </v-row>
+      <Card />
     </v-container>
     <v-divider></v-divider>
     <SearchBar />

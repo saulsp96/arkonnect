@@ -1,38 +1,47 @@
 <template>
   <v-container>
-    <v-card shaped class="mx-auto" max-width="200" max-height="200">
-      <v-card-text>
-        <div></div>
-        <p class="big" align="center">
-          23
-        </p>
-        <div class="medium" align="center">
-          QA
-        </div>
-      </v-card-text>
-      <div>
-        <v-container>
-          <v-row
-            ><v-col>
-              <p class="minijr">23</p>
-            </v-col>
-            <v-col>
-              <p class="minimid">23</p>
-            </v-col>
-            <v-col>
-              <p class="minisr">23</p>
-            </v-col>
-          </v-row>
-        </v-container>
+    <v-row>
+      <div v-for="item in items" :key="item.summary">
+        <v-col>
+          <v-card shaped class="mx-auto" max-width="200" max-height="200">
+            <v-card-text>
+              <div></div>
+              <p class="big" align="center">
+                {{ item.summary }}
+              </p>
+              <div class="medium" align="center">
+                {{ item.title }}
+              </div>
+            </v-card-text>
+            <div>
+              <v-container>
+                <v-row
+                  ><v-col>
+                    <p class="minijr">6</p>
+                  </v-col>
+                  <v-col>
+                    <p class="minimid">6</p>
+                  </v-col>
+                  <v-col>
+                    <p class="minisr">6</p>
+                  </v-col>
+                </v-row>
+              </v-container>
+            </div>
+          </v-card>
+        </v-col>
       </div>
-    </v-card>
+    </v-row>
   </v-container>
 </template>
 <script>
 export default {
   name: "card",
-  props: {
-    cardInfo: [],
+  data() {
+    return {
+      flag: true,
+      items: this.$store.getters.returnTotales,
+    };
   },
 };
 </script>
