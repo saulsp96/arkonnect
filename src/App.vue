@@ -17,7 +17,7 @@ export default {
   components: {
     HelloWorld,
   },
-  beforeCreate: async function() {
+  beforeMount: async function() {
     const { GoogleSpreadsheet } = require("google-spreadsheet");
 
     const credenciales = require("./json/credenciales.json");
@@ -38,6 +38,7 @@ export default {
     console.log(this.$store.state.isWaiting);
   },
   beforeUpdate: async function() {
+    console.log("This is beforeUpdate");
     const { GoogleSpreadsheet } = require("google-spreadsheet");
 
     const credenciales = require("./json/credenciales.json");
