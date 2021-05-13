@@ -14,9 +14,44 @@ export default new Vuex.Store({
     ],
     sheets: [],
     isWaiting: false,
+    isGeneral: true,
     usuarios: [],
+    movimientos: [],
     username: "",
     search: "",
+    headersRH: [
+      {
+        text: "Nombre",
+        align: "start",
+        sortable: false,
+        value: "Nombre",
+      },
+      {
+        text: "Puesto",
+        sortable: false,
+        value: "Puesto",
+      },
+      {
+        text: "TechSkills",
+        sortable: false,
+        value: "TechSkills",
+      },
+      {
+        text: "Tipo Movimiento",
+        sortable: false,
+        value: "Tipo Movimiento",
+      },
+      {
+        text: "Fecha",
+        sortable: false,
+        value: "Fecha",
+      },
+      {
+        text: "Notas",
+        sortable: false,
+        value: "Notas",
+      },
+    ],
     headers: [
       {
         text: "ActivoMT",
@@ -90,10 +125,53 @@ export default new Vuex.Store({
         }
       }
       for (var x = 0; x < 4; x++) {
-        dataItem = { title: Titles[x], summary: RoleCount[x] };
+        dataItem = { id: x, title: Titles[x], summary: RoleCount[x] };
         dataCards[x] = dataItem;
       }
 
+      return dataCards;
+    },
+    returnTotalesMov(state) {
+      //var usersTable = [];
+      state.movimientos = state.Rows[2];
+      var dataItem = {};
+      var dataCards = [];
+      var Titles = [
+        "Ingreso MU",
+        "Ingreso MT",
+        "Ingreso OPS",
+        "Mov equipo MT",
+        "Baja arkus",
+      ];
+      var Title = "";
+      //var SumCount = 0;
+      var RoleCount = [0, 0, 0, 0, 0];
+      //usersTable = this.$store.getters.returnTalent;
+      for (var i = 0; i < state.movimientos.length; i++) {
+        var usuario = state.movimientos[i];
+        Title = usuario["Tipo Movimiento"];
+        switch (Title) {
+          case "Ingreso MU":
+            RoleCount[0] = RoleCount[0] + 1;
+            break;
+          case "Ingreso MT":
+            RoleCount[1] = RoleCount[1] + 1;
+            break;
+          case "Ingreso OPS":
+            RoleCount[2] = RoleCount[2] + 1;
+            break;
+          case "Mov equipo MT":
+            RoleCount[3] = RoleCount[3] + 1;
+            break;
+          case "Baja arkus":
+            RoleCount[4] = RoleCount[4] + 1;
+            break;
+        }
+      }
+      for (var x = 0; x < 4; x++) {
+        dataItem = { id: x, title: Titles[x], summary: RoleCount[x] };
+        dataCards[x] = dataItem;
+      }
       return dataCards;
     },
     returnTalent(state) {
@@ -106,6 +184,17 @@ export default new Vuex.Store({
         usersTable[i] = userReady;
       }
       return usersTable;
+    },
+    returnMovimientos(state) {
+      var movimientosTable = [];
+      state.movimientos = state.Rows[2];
+      for (var i = 0; i < state.movimientos.length; i++) {
+        var movimiento = state.movimientos[i];
+        var movReady = [];
+        movReady = movimiento;
+        movimientosTable[i] = movReady;
+      }
+      return movimientosTable;
     },
   },
   modules: {},

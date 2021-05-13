@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row>
-      <div v-for="item in items" :key="item.summary">
+      <div v-for="item in items" :key="item.id">
         <v-col>
           <v-card shaped class="mx-auto" max-width="200" max-height="200">
             <v-card-text>

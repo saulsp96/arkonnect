@@ -125,6 +125,8 @@ export default {
             case "3":
               //Recursos humanos
               this.$router.push("/dashboard04").catch(() => {});
+              this.$store.state.isGeneral = false;
+              console.log(this.$store.state.isGeneral);
               break;
           }
           break;
