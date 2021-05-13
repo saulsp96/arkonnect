@@ -2,7 +2,7 @@
   <div class="about">
     <TopBanner />
     <SideMenu />
-    <v-container v-if="isWaiting">
+    <v-container v-if="this.$store.state.isWaiting">
       <v-expansion-panels>
         <v-expansion-panel>
           <v-expansion-panel-header>
@@ -17,7 +17,7 @@
     <v-divider></v-divider>
     <SearchBar />
     <v-divider></v-divider>
-    <v-container v-if="isWaiting"><Table01 /></v-container>
+    <v-container v-if="this.$store.state.isWaiting"><Table01 /></v-container>
   </div>
 </template>
 <script>
@@ -35,10 +35,10 @@ export default {
     Table01,
     SearchBar,
   },
-  data() {
-    return {
-      isWaiting: this.$store.state.isWaiting,
-    };
-  },
+  // data() {
+  //   return {
+  //     isWaiting: this.$store.state.isWaiting,
+  //   };
+  // },
 };
 </script>
