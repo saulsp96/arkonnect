@@ -21,7 +21,7 @@
   </div>
 </template>
 <script>
-import SearchBar from "../components/SearchComp.vue";
+import SearchBar from "../components/SearchComp04.vue";
 import Table01 from "../components/table04.vue";
 import Card from "../components/cardrh.vue";
 import SideMenu from "../components/SideMenu03.vue";

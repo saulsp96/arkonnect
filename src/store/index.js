@@ -6,12 +6,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     Rows: [],
-    items: [
-      { title: "DEV", summary: 100 },
-      { title: "SM", summary: 150 },
-      { title: "PO", summary: 101 },
-      { title: "QA", summary: 99 },
-    ],
+    items: [{ title: "DEV", summary: 100, mini: [0, 0, 0] }],
     sheets: [],
     isWaiting: false,
     isGeneral: true,
@@ -103,32 +98,71 @@ export default new Vuex.Store({
       var dataCards = [];
       var Titles = ["DEV", "QA", "SM", "PO"];
       var Title = "";
+      var TechSkills = "";
       //var SumCount = 0;
       var RoleCount = [0, 0, 0, 0];
+      var techSkillsCount = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
       //usersTable = this.$store.getters.returnTalent;
       for (var i = 0; i < state.usuarios.length; i++) {
         var usuario = state.usuarios[i];
         Title = usuario.Role;
+        TechSkills = usuario.TechSkills;
         switch (Title) {
           case "DEV":
             RoleCount[0] = RoleCount[0] + 1;
+            if (TechSkills == "Jr") {
+              techSkillsCount[0] = techSkillsCount[0] + 1;
+            } else if (TechSkills == "Mid") {
+              techSkillsCount[1] = techSkillsCount[1] + 1;
+            } else if (TechSkills == "Sr") {
+              techSkillsCount[2] = techSkillsCount[2] + 1;
+            }
             break;
           case "QA":
             RoleCount[1] = RoleCount[1] + 1;
+            if (TechSkills == "Jr") {
+              techSkillsCount[3] = techSkillsCount[3] + 1;
+            } else if (TechSkills == "Mid") {
+              techSkillsCount[4] = techSkillsCount[4] + 1;
+            } else if (TechSkills == "Sr") {
+              techSkillsCount[5] = techSkillsCount[5] + 1;
+            }
             break;
           case "SM":
             RoleCount[2] = RoleCount[2] + 1;
+            if (TechSkills == "Jr") {
+              techSkillsCount[6] = techSkillsCount[6] + 1;
+            } else if (TechSkills == "Mid") {
+              techSkillsCount[7] = techSkillsCount[7] + 1;
+            } else if (TechSkills == "Sr") {
+              techSkillsCount[8] = techSkillsCount[8] + 1;
+            }
             break;
           case "PO":
             RoleCount[3] = RoleCount[3] + 1;
+            if (TechSkills == "Jr") {
+              techSkillsCount[9] = techSkillsCount[9] + 1;
+            } else if (TechSkills == "Mid") {
+              techSkillsCount[10] = techSkillsCount[10] + 1;
+            } else if (TechSkills == "Sr") {
+              techSkillsCount[11] = techSkillsCount[11] + 1;
+            }
             break;
         }
       }
+      var indice = 0;
       for (var x = 0; x < 4; x++) {
-        dataItem = { id: x, title: Titles[x], summary: RoleCount[x] };
+        dataItem = {
+          id: x,
+          title: Titles[x],
+          summary: RoleCount[x],
+          minijr: techSkillsCount[indice],
+          minimid: techSkillsCount[indice + 1],
+          minisr: techSkillsCount[indice + 2],
+        };
+        indice = indice + 3;
         dataCards[x] = dataItem;
       }
-
       return dataCards;
     },
     returnTotalesMov(state) {

@@ -17,13 +17,13 @@
               <v-container>
                 <v-row
                   ><v-col>
-                    <p class="minijr">6</p>
+                    <p class="minijr">{{ item.minijr }}</p>
                   </v-col>
                   <v-col>
-                    <p class="minimid">6</p>
+                    <p class="minimid">{{ item.minimid }}</p>
                   </v-col>
                   <v-col>
-                    <p class="minisr">6</p>
+                    <p class="minisr">{{ item.minisr }}</p>
                   </v-col>
                 </v-row>
               </v-container>
