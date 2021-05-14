@@ -214,6 +214,21 @@ export default new Vuex.Store({
       for (var i = 0; i < state.usuarios.length; i++) {
         var usuario = state.usuarios[i];
         var userReady = [];
+        if (usuario["Disponible para OPS"] == "TRUE") {
+          console.log(usuario["Disponible para OPS"]);
+          userReady = usuario;
+          console.log(userReady);
+          usersTable[i] = userReady;
+        }
+      }
+      return usersTable;
+    },
+    returnAllTalent(state) {
+      var usersTable = [];
+      state.usuarios = state.Rows[0];
+      for (var i = 0; i < state.usuarios.length; i++) {
+        var usuario = state.usuarios[i];
+        var userReady = [];
         userReady = usuario;
         usersTable[i] = userReady;
       }

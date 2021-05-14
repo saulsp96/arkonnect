@@ -22,7 +22,7 @@
 </template>
 <script>
 import SearchBar from "../components/SearchComp.vue";
-import Table01 from "../components/table01.vue";
+import Table01 from "../components/table02.vue";
 import Card from "../components/card.vue";
 import SideMenu from "../components/SideMenu02.vue";
 import TopBanner from "../components/TopBanner";
