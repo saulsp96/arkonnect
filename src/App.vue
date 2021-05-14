@@ -35,7 +35,6 @@ export default {
       this.$store.state.Rows[i] = await this.$store.state.sheets[i].getRows();
     }
     this.$store.state.isWaiting = true;
-    console.log(this.$store.state.isWaiting);
   },
   beforeUpdate: async function() {
     console.log("This is beforeUpdate");
@@ -56,7 +55,6 @@ export default {
       this.$store.state.Rows[i] = await this.$store.state.sheets[i].getRows();
     }
     this.$store.state.isWaiting = true;
-    console.log(this.$store.state.isWaiting);
   },
   data() {
     return {

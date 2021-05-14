@@ -6,7 +6,7 @@
       <v-expansion-panels>
         <v-expansion-panel>
           <v-expansion-panel-header>
-            Tarjetas
+            Totales
           </v-expansion-panel-header>
           <v-expansion-panel-content>
             <Card />

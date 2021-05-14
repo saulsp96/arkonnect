@@ -215,9 +215,7 @@ export default new Vuex.Store({
         var usuario = state.usuarios[i];
         var userReady = [];
         if (usuario["Disponible para OPS"] == "TRUE") {
-          console.log(usuario["Disponible para OPS"]);
           userReady = usuario;
-          console.log(userReady);
           usersTable[i] = userReady;
         }
       }
