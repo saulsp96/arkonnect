@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import router from "../router/index";
 
 Vue.use(Vuex);
 
@@ -48,6 +49,39 @@ export default new Vuex.Store({
       },
     ],
     headers: [
+      { text: "Oficina", value: "Oficina", sortable: false },
+      { text: "CV", value: "CV", sortable: false },
+      { text: "Correo", value: "Correo", sortable: false },
+      { text: "Nombre", align: "start", value: "Nombre", sortable: false },
+      { text: "Role", value: "Role", sortable: false },
+      { text: "TechSkills", value: "TechSkills", sortable: false },
+      { text: "Ingles", value: "Ingles" },
+      { text: "Calificacion OPS", value: "Calificacion \nOPS" },
+      { text: "Equipo", value: "Equipo", sortable: false },
+      { text: "Equipo futuro", value: "Equipo \nFuturo", sortable: false },
+      {
+        text: "Fecha Inicio equipo actual",
+        value: "Fecha Inicio \nequipo actual",
+        sortable: false,
+      },
+      { text: "Main #1", value: "Main #1", sortable: false },
+      { text: "Main #2", value: "Main #2", sortable: false },
+      { text: "Secondary #1", value: "Secondary \n#1", sortable: false },
+      { text: "Secondary #2", value: "Secondary \n#2", sortable: false },
+      { text: "Secondary #3", value: "Secondary \n#3", sortable: false },
+      {
+        text: "Target Tech Main \n(Training)",
+        sortable: false,
+        value: "Target Tech Main \n(Training)",
+      },
+      {
+        text: "Next Tech Secondary",
+        value: "Next Tech Secondary (Training)",
+        sortable: false,
+      },
+      { text: "Notes", value: "Notas", sortable: false },
+    ],
+    headersAdmin: [
       {
         text: "ActivoMT",
         align: "start",
@@ -242,6 +276,17 @@ export default new Vuex.Store({
         movimientosTable[i] = movReady;
       }
       return movimientosTable;
+    },
+    isUserAuth() {
+      console.log("This is isUserAuth");
+      var userRole = localStorage.getItem("userRole");
+      //console.log(localStorage.getItem("userRole"));
+      if (userRole == null) {
+        console.log("User isnt LoggedIn");
+        localStorage.setItem("isAuth", false);
+        router.push("/").catch(() => {});
+      }
+      return true;
     },
   },
   modules: {},

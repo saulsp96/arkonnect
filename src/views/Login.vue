@@ -109,6 +109,7 @@ export default {
         ) {
           var userRole = userTable[i].Role;
           this.$store.state.username = userTable[i].Nombre;
+          localStorage.setItem("userRole", userRole);
           switch (userRole) {
             case "0":
               //Admin

@@ -16,7 +16,7 @@ export default {
   data() {
     return {
       Search: this.$store.state.search,
-      Headers: this.$store.state.headers,
+      Headers: this.$store.state.headersAdmin,
       Talento: this.$store.getters.returnAllTalent,
     };
   },
