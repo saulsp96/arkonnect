@@ -34,6 +34,7 @@ export default {
       this.$store.state.sheets[i] = documento.sheetsByIndex[i];
       console.log("Sheet obtenido: " + this.$store.state.sheets[i].title);
       this.$store.state.Rows[i] = await this.$store.state.sheets[i].getRows();
+      console.log(this.$store.state.Rows[i]);
     }
     this.$store.state.isWaiting = true;
   },
