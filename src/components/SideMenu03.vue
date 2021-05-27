@@ -1,12 +1,11 @@
 <template>
   <v-container>
-    <v-navigation-drawer v-model="drawer" permanent
-        expand-on-hover app>
-        <v-list-item class="px-2">
-            <v-list-item-avatar>
-              <v-img src="./arkus.png"></v-img>
-            </v-list-item-avatar>
-          </v-list-item>
+    <v-navigation-drawer v-model="drawer" permanent expand-on-hover app>
+      <v-list-item class="px-2">
+        <v-list-item-avatar>
+          <v-img src="./arkus.png"></v-img>
+        </v-list-item-avatar>
+      </v-list-item>
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="title">ARKONECT</v-list-item-title>
@@ -47,11 +46,11 @@ export default {
         icon: "mdi-view-dashboard-variant-outline",
         to: "/dashboard03",
       },
-      {
-        title: "Solicitud de perfil",
-        icon: "mdi-account-arrow-left-outline",
-        to: "/about",
-      },
+      // {
+      //   title: "Solicitud de perfil",
+      //   icon: "mdi-account-arrow-left-outline",
+      //   to: "/about",
+      // },
       { title: "Cerrar sesión", icon: "mdi-logout", to: "/" },
     ],
   }),

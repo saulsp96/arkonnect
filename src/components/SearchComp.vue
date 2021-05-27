@@ -17,6 +17,7 @@
         solo-inverted
         hide-details
         :items="keys"
+        :search="search"
         prepend-inner-icon="mdi-magnify"
         label="Sort by"
       ></v-select>

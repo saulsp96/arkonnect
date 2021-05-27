@@ -18,7 +18,7 @@ export default {
     HelloWorld,
   },
   beforeCreate: async function() {
-    this.$store.getters.isUserAuth;
+    this.$store.getters.isUserLogged;
     const { GoogleSpreadsheet } = require("google-spreadsheet");
 
     const credenciales = require("./json/credenciales.json");
@@ -38,7 +38,7 @@ export default {
     this.$store.state.isWaiting = true;
   },
   beforeUpdate: async function() {
-    this.$store.getters.isUserAuth;
+    this.$store.getters.isUserLogged;
     console.log("This is beforeUpdate");
     const { GoogleSpreadsheet } = require("google-spreadsheet");
 

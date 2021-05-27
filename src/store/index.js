@@ -236,7 +236,7 @@ export default new Vuex.Store({
             break;
         }
       }
-      for (var x = 0; x < 4; x++) {
+      for (var x = 0; x <= 4; x++) {
         dataItem = { id: x, title: Titles[x], summary: RoleCount[x] };
         dataCards[x] = dataItem;
       }
@@ -277,14 +277,19 @@ export default new Vuex.Store({
       }
       return movimientosTable;
     },
-    isUserAuth() {
-      console.log("This is isUserAuth");
+    isUserLogged() {
       var userRole = localStorage.getItem("userRole");
-      //console.log(localStorage.getItem("userRole"));
       if (userRole == null) {
-        console.log("User isnt LoggedIn");
         localStorage.setItem("isAuth", false);
         router.push("/").catch(() => {});
+      } else if (userRole == 0) {
+        router.push("/dashboard01").catch(() => {});
+      } else if (userRole == 1) {
+        router.push("/dashboard02").catch(() => {});
+      } else if (userRole == 2) {
+        router.push("/dashboard03").catch(() => {});
+      } else if (userRole == 3) {
+        router.push("/dashboard04").catch(() => {});
       }
       return true;
     },

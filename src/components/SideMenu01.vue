@@ -46,11 +46,11 @@ export default {
         icon: "mdi-view-dashboard-variant-outline",
         to: "/dashboard01",
       },
-      {
-        title: "Solicitud de perfil",
-        icon: "mdi-account-arrow-left-outline",
-        to: "/about",
-      },
+      // {
+      //   title: "Solicitud de perfil",
+      //   icon: "mdi-account-arrow-left-outline",
+      //   to: "/about",
+      // },
       { title: "Cerrar sesión", icon: "mdi-logout", to: "/" },
     ],
   }),
