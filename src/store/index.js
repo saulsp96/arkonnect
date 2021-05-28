@@ -49,13 +49,13 @@ export default new Vuex.Store({
       },
     ],
     headers: [
-      { text: "Role", align: "center", value: "Role", sortable: false },
-      { text: "Nombre", value: "Nombre", sortable: false },
-      { text: "TechSkills", value: "TechSkills", sortable: false },
+      { text: "Role", align: "center", value: "Role" },
+      { text: "Nombre", value: "Nombre" },
+      { text: "TechSkills", value: "TechSkills" },
       { text: "Ingles", value: "Ingles" },
-      { text: "Main #1", value: "Main #1", sortable: false },
-      { text: "Main #2", value: "Main #2", sortable: false },
-      { text: "CV", value: "CV", sortable: false },
+      { text: "Main #1", value: "Main #1" },
+      { text: "Main #2", value: "Main #2" },
+      { text: "CV", value: "CV" },
     ],
     headersAdmin: [
       {
@@ -224,7 +224,10 @@ export default new Vuex.Store({
       for (var i = 0; i < state.usuarios.length; i++) {
         var usuario = state.usuarios[i];
         var userReady = [];
-        if (usuario["Disponible para OPS"] == "TRUE") {
+        if (
+          usuario["Activo MT"] == "TRUE" &&
+          usuario["Disponible para OPS"] == "TRUE"
+        ) {
           userReady = usuario;
           usersTable[i] = userReady;
         }
@@ -237,6 +240,7 @@ export default new Vuex.Store({
       for (var i = 0; i < state.usuarios.length; i++) {
         var usuario = state.usuarios[i];
         var userReady = [];
+
         userReady = usuario;
         usersTable[i] = userReady;
       }
