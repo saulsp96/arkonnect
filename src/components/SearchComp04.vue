@@ -2,6 +2,7 @@
   <v-toolbar dark color="blue darken-3" class="mb-1">
     <v-text-field
       v-model="search"
+      @input="handleSearch()"
       clearable
       flat
       solo-inverted
@@ -34,6 +35,13 @@
 </template>
 <script>
 export default {
+  methods: {
+    handleSearch() {
+      console.log("This is handleSearch");
+      this.$store.state.search = this.search;
+      return true;
+    },
+  },
   data() {
     return {
       search: this.$store.state.search,

@@ -3,7 +3,7 @@
     <v-data-table
       :headers="Headers"
       :items="Movimientos"
-      :search="Search"
+      :search="this.$store.state.search"
       :items-per-page="Movimientos.length"
       class="elevation-1"
     >
@@ -15,7 +15,6 @@
 export default {
   data() {
     return {
-      Search: this.$store.state.search,
       Headers: this.$store.state.headersRH,
       Movimientos: this.$store.getters.returnMovimientos,
     };
