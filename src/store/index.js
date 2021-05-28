@@ -240,7 +240,6 @@ export default new Vuex.Store({
       for (var i = 0; i < state.usuarios.length; i++) {
         var usuario = state.usuarios[i];
         var userReady = [];
-
         userReady = usuario;
         usersTable[i] = userReady;
       }

@@ -13,6 +13,13 @@
 
 <script>
 export default {
+  methods: {
+    getColor(calories) {
+      if (calories > 400) return "red";
+      else if (calories > 200) return "orange";
+      else return "green";
+    },
+  },
   data() {
     return {
       Headers: this.$store.state.headers,
