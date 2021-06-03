@@ -12,6 +12,16 @@
           {{ item.Ingles }}
         </v-chip>
       </template>
+      <template v-slot:[`item.CV`]="{ item }">
+        <a :href="item.CV">
+          CV
+        </a>
+      </template>
+      <template v-slot:[`item.Correo`]="{ item }">
+        <a :href="`mailto:${item.Correo}`">
+          {{ item.Correo }}
+        </a>
+      </template>
     </v-data-table></v-container
   >
 </template>

@@ -62,9 +62,9 @@ export default new Vuex.Store({
         text: "ActivoMT",
         align: "center",
         sortable: false,
-        value: "Activo MT",
+        value: "ActivoMT",
       },
-      { text: "Disponible OPS", value: "Disponible para OPS", sortable: false },
+      { text: "Disponible OPS", value: "DisponibleparaOPS", sortable: false },
       { text: "Oficina", value: "Oficina", sortable: false },
       { text: "CV", value: "CV", sortable: false },
       { text: "Correo", value: "Correo", sortable: false },
@@ -225,8 +225,8 @@ export default new Vuex.Store({
         var usuario = state.usuarios[i];
         var userReady = [];
         if (
-          usuario["Activo MT"] == "TRUE" &&
-          usuario["Disponible para OPS"] == "TRUE"
+          usuario["ActivoMT"] == "TRUE" &&
+          usuario["DisponibleparaOPS"] == "TRUE"
         ) {
           userReady = usuario;
           usersTable[i] = userReady;
