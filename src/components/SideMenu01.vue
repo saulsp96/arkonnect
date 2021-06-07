@@ -8,7 +8,7 @@
       </v-list-item>
       <v-list-item>
         <v-list-item-content>
-          <v-list-item-title class="title">ARKONECT</v-list-item-title>
+          <v-list-item-title class="title">ARKONNECT</v-list-item-title>
           <v-list-item-subtitle>
             Talento Interno
           </v-list-item-subtitle>
