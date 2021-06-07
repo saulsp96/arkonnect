@@ -6,6 +6,7 @@
       :search="this.$store.state.search"
       :items-per-page="Talento.length"
       class="elevation-1"
+      :custom-filter="filterOnlyCapsText"
     >
       <template v-slot:[`item.Ingles`]="{ item }">
         <v-chip :color="getColor(item.Ingles)" dark>
@@ -22,6 +23,19 @@
           {{ item.Correo }}
         </a>
       </template>
+      <!-- <template v-slot:[`body.append`]>
+        <tr>
+          <td></td>
+          <td>
+            <v-text-field
+              v-model="blankString"
+              type="number"
+              label="Less than"
+            ></v-text-field>
+          </td>
+          <td colspan="4"></td>
+        </tr>
+      </template> -->
     </v-data-table></v-container
   >
 </template>
@@ -34,9 +48,21 @@ export default {
       else if (Ingles < 8) return "orange";
       else return "green";
     },
+    filterOnlyCapsText(value, search) {
+      return (
+        value != null &&
+        search != null &&
+        typeof value === "string" &&
+        value
+          .toString()
+          .toLocaleUpperCase()
+          .indexOf(search) !== -1
+      );
+    },
   },
   data() {
     return {
+      blankString: "",
       Headers: this.$store.state.headersRC,
       Talento: this.$store.getters.returnTalent,
     };

@@ -13,7 +13,7 @@
     <template v-if="$vuetify.breakpoint.mdAndUp">
       <v-spacer></v-spacer>
 
-      <v-select
+      <!-- <v-select
         v-model="sortBy"
         flat
         solo-inverted
@@ -22,7 +22,7 @@
         :search="search"
         prepend-inner-icon="mdi-magnify"
         label="Agrupar por"
-      ></v-select>
+      ></v-select> -->
       <v-spacer></v-spacer>
       <!-- <v-btn-toggle v-model="sortDesc" mandatory>
         <v-btn large depressed color="blue" :value="false">
