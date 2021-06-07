@@ -17,12 +17,12 @@
     <v-divider></v-divider>
     <SearchBar />
     <v-divider></v-divider>
-    <v-container v-if="this.$store.state.isWaiting"><Table01 /></v-container>
+    <v-container v-if="this.$store.state.isWaiting"><Table03 /></v-container>
   </div>
 </template>
 <script>
 import SearchBar from "../components/SearchComp.vue";
-import Table01 from "../components/table01.vue";
+import Table03 from "../components/table03.vue";
 import Card from "../components/card.vue";
 import SideMenu from "../components/SideMenu03.vue";
 import TopBanner from "../components/TopBanner";
@@ -32,7 +32,7 @@ export default {
     SideMenu,
     TopBanner,
     Card,
-    Table01,
+    Table03,
     SearchBar,
   },
 };

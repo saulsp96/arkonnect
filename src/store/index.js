@@ -64,6 +64,13 @@ export default new Vuex.Store({
       { text: "Main #2", value: "Main #2" },
       { text: "CV", value: "CV" },
     ],
+    headersRC: [
+      { text: "Role", align: "center", value: "Role" },
+      { text: "TechSkills", value: "TechSkills" },
+      { text: "Ingles", value: "Ingles" },
+      { text: "Main #1", value: "Main #1" },
+      { text: "Main #2", value: "Main #2" },
+    ],
     headersAdmin: [
       {
         text: "ActivoMT",
