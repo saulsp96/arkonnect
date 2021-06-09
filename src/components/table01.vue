@@ -6,6 +6,10 @@
       :search="this.$store.state.search"
       :items-per-page="Talento.length"
       class="elevation-1"
+      :custom-filter="filterOnlyCapsText"
+      :sort-by="['Role', 'TechSkills']"
+      :sort-desc="[false, true]"
+      multi-sort
     >
       <template v-slot:[`item.ActivoMT`]="{ item }">
         <v-simple-checkbox v-model="item.ActivoMT" disabled></v-simple-checkbox>

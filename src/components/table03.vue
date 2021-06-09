@@ -3,10 +3,13 @@
     <v-data-table
       :headers="Headers"
       :items="Talento"
+      item-key="name"
       :search="this.$store.state.search"
       :items-per-page="Talento.length"
       class="elevation-1"
-      :custom-filter="filterOnlyCapsText"
+      :sort-by="['Role', 'TechSkills']"
+      :sort-desc="[false, true]"
+      multi-sort
     >
       <template v-slot:[`item.Ingles`]="{ item }">
         <v-chip :color="getColor(item.Ingles)" dark>
@@ -23,21 +26,48 @@
           {{ item.Correo }}
         </a>
       </template>
-      <!-- <template v-slot:[`body.append`]>
+      <template v-slot:[`body.prepend`]>
         <tr>
-          <td></td>
+          <td>
+            <v-text-field
+              max-width="8"
+              v-model="blankString"
+              type="text"
+              label="Role"
+            ></v-text-field>
+          </td>
+          <td>
+            <v-text-field
+              v-model="blankString"
+              type="text"
+              label="TechSkills"
+            ></v-text-field>
+          </td>
           <td>
             <v-text-field
               v-model="blankString"
               type="number"
-              label="Less than"
+              label="Ingles"
+            ></v-text-field>
+          </td>
+          <td>
+            <v-text-field
+              v-model="blankString"
+              type="text"
+              label="Main #1"
+            ></v-text-field>
+          </td>
+          <td>
+            <v-text-field
+              v-model="blankString"
+              type="text"
+              label="Main #2"
             ></v-text-field>
           </td>
           <td colspan="4"></td>
         </tr>
-      </template> -->
-    </v-data-table></v-container
-  >
+      </template> </v-data-table
+  ></v-container>
 </template>
 
 <script>
@@ -48,21 +78,11 @@ export default {
       else if (Ingles < 8) return "orange";
       else return "green";
     },
-    filterOnlyCapsText(value, search) {
-      return (
-        value != null &&
-        search != null &&
-        typeof value === "string" &&
-        value
-          .toString()
-          .toLocaleUpperCase()
-          .indexOf(search) !== -1
-      );
-    },
   },
   data() {
     return {
       blankString: "",
+      filtro: "DEV",
       Headers: this.$store.state.headersRC,
       Talento: this.$store.getters.returnTalent,
     };

@@ -119,6 +119,14 @@ export default new Vuex.Store({
   mutations: {},
   actions: {},
   getters: {
+    filterOnlyCapsText(value, search) {
+      return (
+        value != null &&
+        search != null &&
+        typeof value === "string" &&
+        value.toLocaleUpperCase().indexOf(search) !== -1
+      );
+    },
     returnTotales(state) {
       //var usersTable = [];
       state.usuarios = state.Rows[0];
