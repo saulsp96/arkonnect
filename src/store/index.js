@@ -14,6 +14,8 @@ export default new Vuex.Store({
     usuarios: [],
     movimientos: [],
     username: "",
+    ingresos: 0.0,
+    egresos: 0.0,
     agrupar: [
       { text: "Role", align: "center", value: "Role" },
       { text: "TechSkills", value: "TechSkills" },
@@ -223,18 +225,22 @@ export default new Vuex.Store({
         switch (Title) {
           case "Ingreso MU":
             RoleCount[0] = RoleCount[0] + 1;
+            state.ingresos = state.ingresos + 1;
             break;
           case "Ingreso MT":
             RoleCount[1] = RoleCount[1] + 1;
+            state.ingresos = state.ingresos + 1;
             break;
           case "Ingreso OPS":
             RoleCount[2] = RoleCount[2] + 1;
+            state.ingresos = state.ingresos + 1;
             break;
           case "Mov equipo MT":
             RoleCount[3] = RoleCount[3] + 1;
             break;
           case "Baja arkus":
             RoleCount[4] = RoleCount[4] + 1;
+            state.egresos = state.egresos + 1;
             break;
         }
       }
@@ -297,6 +303,12 @@ export default new Vuex.Store({
         router.push("/dashboard04").catch(() => {});
       }
       return true;
+    },
+    returnKDratio(state) {
+      var KDratio = 0.0;
+      KDratio = state.ingresos / state.egresos;
+      console.log("This is KD: " + KDratio);
+      return KDratio;
     },
   },
   modules: {},

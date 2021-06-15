@@ -3,12 +3,13 @@
     <v-row>
       <div v-for="item in itemsRH" :key="item.id">
         <v-col>
-          <v-card shaped class="mx-auto" max-width="500" max-height="200">
+          <v-card :class="`rounded-lg`" max-width="500" max-height="200">
             <v-card-text>
               <div></div>
               <p class="big" align="center">
                 {{ item.summary }}
               </p>
+              <!-- <v-divider></v-divider> -->
               <div class="medium" align="center">
                 {{ item.title }}
               </div>
@@ -46,33 +47,18 @@ export default {
 };
 </script>
 <style scoped>
-.minijr {
-  font-size: 100%;
-  font-weight: bold;
-  color: lightskyblue;
-}
-.minimid {
-  font-size: 100%;
-  font-weight: bold;
-  color: MediumSeaGreen;
-}
-.minisr {
-  font-size: 100%;
-  font-weight: bold;
-  color: rgb(248, 73, 73);
-}
 .big {
   font-size: 60px;
-  padding-bottom: 5px;
+  padding-bottom: 25px;
 }
 .medium {
   font-size: 30px;
   padding-bottom: 0px;
 }
 .v-card {
-  padding-top: 5px;
-  padding-right: 3px;
-  padding-bottom: 0px;
-  padding-left: 8px;
+  padding-top: 15px;
+  padding-right: 10px;
+  padding-bottom: 15px;
+  padding-left: 10px;
 }
 </style>

@@ -3,9 +3,9 @@
     <v-row>
       <div v-for="item in items" :key="item.id">
         <v-col>
-          <v-card shaped class="mx-auto" width="200" height="150">
+          <v-card :class="`rounded-lg`" width="200" height="170">
             <v-card-text>
-              <div></div>
+              <!-- <div></div> -->
               <p class="big" align="center">
                 {{ item.summary }}
               </p>
@@ -13,17 +13,20 @@
                 {{ item.title }}
               </div>
             </v-card-text>
+            <v-divider></v-divider>
             <div>
               <v-container>
                 <v-row
                   ><v-col>
-                    <p class="minijr">{{ item.minijr }}</p>
+                    <p class="minijr" align="center">{{ item.minijr }}</p>
                   </v-col>
+                  <v-divider vertical></v-divider>
                   <v-col>
-                    <p class="minimid">{{ item.minimid }}</p>
+                    <p class="minimid" align="center">{{ item.minimid }}</p>
                   </v-col>
+                  <v-divider vertical></v-divider>
                   <v-col>
-                    <p class="minisr">{{ item.minisr }}</p>
+                    <p class="minisr" align="center">{{ item.minisr }}</p>
                   </v-col>
                 </v-row>
               </v-container>
@@ -63,11 +66,12 @@ export default {
 }
 .big {
   font-size: 60px;
-  padding-bottom: 5px;
+  padding-bottom: 15px;
+  padding-top: 5px;
+  font-weight: bold;
 }
 .medium {
   font-size: 30px;
-  padding-bottom: 0px;
 }
 .v-card {
   padding-top: 5px;

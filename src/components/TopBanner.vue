@@ -4,7 +4,7 @@
       <v-row>
         <h2>Talento Interno Arkus Nexus</h2>
       </v-row>
-      <v-row justify="end">
+      <v-row justify="end" v-if="this.$store.state.isWaiting">
         <h2 v-if="this.$store.state.isWaiting">
           {{ this.$store.state.username }}
         </h2>

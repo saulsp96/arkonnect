@@ -6,7 +6,7 @@
       <v-expansion-panels>
         <v-expansion-panel>
           <v-expansion-panel-header>
-            Totales
+            Totales | KD Ratio: {{ KDratio }}
           </v-expansion-panel-header>
           <v-expansion-panel-content>
             <Card />
@@ -34,6 +34,11 @@ export default {
     Card,
     Table01,
     SearchBar,
+  },
+  data() {
+    return {
+      KDratio: this.$store.getters.returnKDratio,
+    };
   },
 };
 </script>
