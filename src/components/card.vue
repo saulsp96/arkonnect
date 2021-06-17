@@ -74,9 +74,7 @@ export default {
   font-size: 30px;
 }
 .v-card {
-  padding-top: 5px;
   padding-right: 3px;
-  padding-bottom: 0px;
   padding-left: 8px;
 }
 </style>
