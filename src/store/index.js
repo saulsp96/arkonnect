@@ -58,7 +58,11 @@ export default new Vuex.Store({
       },
     ],
     headers: [
-      { text: "Role", align: "center", value: "Role" },
+      {
+        text: "Role",
+        align: "center",
+        value: "Role",
+      },
       { text: "Nombre", value: "Nombre" },
       { text: "TechSkills", value: "TechSkills" },
       { text: "Ingles", value: "Ingles" },
@@ -66,8 +70,22 @@ export default new Vuex.Store({
       { text: "Main #2", value: "Main #2" },
       { text: "CV", value: "CV" },
     ],
+    defaultRoleFilter: "",
+    defaultTeckSkillsFilter: "",
+    defaultInglesFilter: "",
+    defaultMain1Filter: "",
+    defaultMain2Filter: "",
     headersRC: [
-      { text: "Role", align: "center", value: "Role" },
+      {
+        text: "Role",
+        align: "center",
+        value: "Role",
+        filter: (value, state) => {
+          if (!state.defaultRoleFilter) return true;
+
+          return value == state.defaultRoleFilter;
+        },
+      },
       { text: "TechSkills", value: "TechSkills" },
       { text: "Ingles", value: "Ingles" },
       { text: "Main #1", value: "Main #1" },

@@ -31,35 +31,35 @@
           <td>
             <v-text-field
               max-width="8"
-              v-model="blankString"
+              v-model="defaultRoleFilter"
               type="text"
               label="Role"
             ></v-text-field>
           </td>
           <td>
             <v-text-field
-              v-model="blankString"
+              v-model="filtro"
               type="text"
               label="TechSkills"
             ></v-text-field>
           </td>
           <td>
             <v-text-field
-              v-model="blankString"
+              v-model="filtro"
               type="number"
               label="Ingles"
             ></v-text-field>
           </td>
           <td>
             <v-text-field
-              v-model="blankString"
+              v-model="filtro"
               type="text"
               label="Main #1"
             ></v-text-field>
           </td>
           <td>
             <v-text-field
-              v-model="blankString"
+              v-model="filtro"
               type="text"
               label="Main #2"
             ></v-text-field>
@@ -81,8 +81,8 @@ export default {
   },
   data() {
     return {
-      blankString: "",
-      filtro: "DEV",
+      defaultRoleFilter: this.$store.state.defaultRoleFilter,
+      filtro: "",
       Headers: this.$store.state.headersRC,
       Talento: this.$store.getters.returnTalent,
     };
