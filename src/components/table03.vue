@@ -32,6 +32,7 @@
             <v-text-field
               max-width="8"
               v-model="defaultRoleFilter"
+              @input="handleRoleFilter()"
               type="text"
               label="Role"
             ></v-text-field>
@@ -73,6 +74,12 @@
 <script>
 export default {
   methods: {
+    handleRoleFilter() {
+      console.log("This is handleRoleFilter");
+      this.$store.state.defaultRoleFilter = this.defaultRoleFilter;
+      console.log(this.$store.state.defaultRoleFilter);
+      return true;
+    },
     getColor(Ingles) {
       if (Ingles < 5) return "red";
       else if (Ingles < 8) return "orange";
@@ -81,7 +88,7 @@ export default {
   },
   data() {
     return {
-      defaultRoleFilter: this.$store.state.defaultRoleFilter,
+      defaultRoleFilter: "",
       filtro: "",
       Headers: this.$store.state.headersRC,
       Talento: this.$store.getters.returnTalent,

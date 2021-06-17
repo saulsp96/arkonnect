@@ -288,9 +288,15 @@ export default new Vuex.Store({
       var usersTable = [];
       state.usuarios = state.Rows[0];
       for (var i = 0; i < state.usuarios.length; i++) {
+        var isActive = "";
+        var isOPS = "";
         var usuario = state.usuarios[i];
         var userReady = [];
         userReady = usuario;
+        isActive = userReady["ActivoMT"] == "TRUE";
+        isOPS = userReady["DisponibleparaOPS"] == "TRUE";
+        userReady["ActivoMT"] = isActive;
+        userReady["DisponibleparaOPS"] = isOPS;
         usersTable[i] = userReady;
       }
       return usersTable;

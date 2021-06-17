@@ -37,7 +37,7 @@ export default {
   },
   data() {
     return {
-      KDratio: this.$store.getters.returnKDratio,
+      KDratio: 0.0,
     };
   },
 };

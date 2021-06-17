@@ -41,6 +41,7 @@ export default {
     handleSearch() {
       console.log("This is handleSearch");
       this.$store.state.search = this.search;
+      console.log(this.$store.state.search);
       return true;
     },
   },
