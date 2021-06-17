@@ -6,7 +6,7 @@
       <v-expansion-panels>
         <v-expansion-panel>
           <v-expansion-panel-header>
-            Totales | KD Ratio: {{ KDratio }}
+            Totales | KD Ratio: {{ this.$store.state.KDratio }}
           </v-expansion-panel-header>
           <v-expansion-panel-content>
             <Card />
@@ -37,7 +37,7 @@ export default {
   },
   data() {
     return {
-      KDratio: 0.0,
+      sample: "",
     };
   },
 };

@@ -127,7 +127,6 @@ export default {
               //Recursos humanos
               this.$router.push("/dashboard04").catch(() => {});
               this.$store.state.isGeneral = false;
-              console.log(this.$store.state.isGeneral);
               break;
           }
           break;

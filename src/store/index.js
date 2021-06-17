@@ -6,6 +6,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    KDratio: 0,
     Rows: [],
     items: [{ title: "DEV", summary: 100, mini: [0, 0, 0] }],
     sheets: [],
@@ -33,22 +34,22 @@ export default new Vuex.Store({
       },
       {
         text: "Puesto",
-        sortable: false,
+        sortable: true,
         value: "Puesto",
       },
       {
         text: "TechSkills",
-        sortable: false,
+        sortable: true,
         value: "TechSkills",
       },
       {
         text: "Tipo Movimiento",
-        sortable: false,
+        sortable: true,
         value: "Tipo Movimiento",
       },
       {
         text: "Fecha",
-        sortable: false,
+        sortable: true,
         value: "Fecha",
       },
       {
@@ -63,12 +64,12 @@ export default new Vuex.Store({
         align: "center",
         value: "Role",
       },
-      { text: "Nombre", value: "Nombre" },
+      { text: "Nombre", value: "Nombre", sortable: false },
       { text: "TechSkills", value: "TechSkills" },
       { text: "Ingles", value: "Ingles" },
       { text: "Main #1", value: "Main #1" },
       { text: "Main #2", value: "Main #2" },
-      { text: "CV", value: "CV" },
+      { text: "CV", value: "CV", sortable: false },
     ],
     defaultRoleFilter: "",
     defaultTeckSkillsFilter: "",
@@ -95,10 +96,10 @@ export default new Vuex.Store({
       {
         text: "ActivoMT",
         align: "center",
-        sortable: false,
+        sortable: true,
         value: "ActivoMT",
       },
-      { text: "Disponible OPS", value: "DisponibleparaOPS", sortable: false },
+      { text: "Disponible OPS", value: "DisponibleparaOPS", sortable: true },
       { text: "Oficina", value: "Oficina", sortable: false },
       { text: "CV", value: "CV", sortable: false },
       { text: "Correo", value: "Correo", sortable: false },
@@ -119,7 +120,7 @@ export default new Vuex.Store({
         sortable: false,
       },
       { text: "Main #1", value: "Main #1" },
-      { text: "Main #2", value: "Main #2", sortable: false },
+      { text: "Main #2", value: "Main #2" },
       { text: "Secondary #1", value: "Secondary \n#1", sortable: false },
       { text: "Secondary #2", value: "Secondary \n#2", sortable: false },
       { text: "Secondary #3", value: "Secondary \n#3", sortable: false },
@@ -331,8 +332,10 @@ export default new Vuex.Store({
     returnKDratio(state) {
       var KDratio = 0.0;
       KDratio = state.ingresos / state.egresos;
-      console.log("This is KD: " + KDratio);
-      return KDratio;
+      KDratio.toString().slice(0, 4);
+      state.KDratio = KDratio;
+      //state.KDratio.toString().slice(0, 5);
+      return true;
     },
   },
   modules: {},

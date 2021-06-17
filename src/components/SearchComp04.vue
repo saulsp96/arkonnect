@@ -37,7 +37,6 @@
 export default {
   methods: {
     handleSearch() {
-      console.log("This is handleSearch");
       this.$store.state.search = this.search;
       return true;
     },

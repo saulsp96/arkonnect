@@ -18,6 +18,7 @@ export default {
     HelloWorld,
   },
   beforeCreate: async function() {
+    console.log("This is beforeCreate");
     this.$store.getters.isUserLogged;
     const { GoogleSpreadsheet } = require("google-spreadsheet");
 
@@ -36,6 +37,8 @@ export default {
       this.$store.state.Rows[i] = await this.$store.state.sheets[i].getRows();
       //console.log(this.$store.state.Rows[i]);
     }
+    this.$store.getters.returnTotalesMov;
+    this.$store.getters.returnKDratio;
     this.$store.state.isWaiting = true;
   },
   beforeUpdate: async function() {
@@ -57,6 +60,7 @@ export default {
       console.log("Sheet obtenido: " + this.$store.state.sheets[i].title);
       this.$store.state.Rows[i] = await this.$store.state.sheets[i].getRows();
     }
+    this.$store.getters.returnKDratio;
     this.$store.state.isWaiting = true;
     this.$store.getters.isUserAuth;
   },
