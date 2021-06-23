@@ -16,6 +16,7 @@
     </v-container>
     <v-divider></v-divider>
     <SearchBar />
+
     <v-divider></v-divider>
     <v-container v-if="this.$store.state.isWaiting"><Table01 /></v-container>
   </div>

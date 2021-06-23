@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import { jsPDF } from "jspdf";
 import router from "../router/index";
 
 Vue.use(Vuex);
@@ -138,7 +139,22 @@ export default new Vuex.Store({
     ],
   },
   mutations: {},
-  actions: {},
+  actions: {
+    handlePrint: () => {
+      console.log("This is action handlePrint");
+      const doc = new jsPDF({
+        orientation: "portrait",
+        format: "letter",
+        unit: "in",
+      });
+
+      doc.setFontSize(16).text("Gestion talento MIND", 0.5, 1.0);
+      doc.setLineWidth(0.01).line(0.5, 1.1, 8.0, 1.1);
+
+      doc.save("talentomind" + new Date().valueOf() + ".pdf");
+      return true;
+    },
+  },
   getters: {
     filterOnlyCapsText(value, search) {
       return (
@@ -335,6 +351,10 @@ export default new Vuex.Store({
       KDratio.toString().slice(0, 4);
       state.KDratio = KDratio;
       //state.KDratio.toString().slice(0, 5);
+      return true;
+    },
+    handleSignOut: () => {
+      console.log("This is handleSignOut");
       return true;
     },
   },

@@ -51,7 +51,12 @@ export default {
       //   icon: "mdi-account-arrow-left-outline",
       //   to: "/about",
       // },
-      { title: "Cerrar sesión", icon: "mdi-logout", to: "/" },
+      {
+        title: "Cerrar sesión",
+        icon: "mdi-logout",
+        to: "/",
+        // click: console.log("This is action"),<!-- :click="item.action" -->
+      },
     ],
   }),
   watch: {

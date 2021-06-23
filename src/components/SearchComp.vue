@@ -32,6 +32,19 @@
           <v-icon>mdi-arrow-down</v-icon>
         </v-btn>
       </v-btn-toggle> -->
+      <v-btn
+        v-if="this.$store.state.isWaiting"
+        v-on:click="handlePrint"
+        class="mx-2"
+        fab
+        dark
+        small
+        color="red"
+      >
+        <v-icon dark>
+          mdi-file-download-outline
+        </v-icon>
+      </v-btn>
     </template>
   </v-toolbar>
 </template>
@@ -44,6 +57,10 @@ export default {
       console.log(this.$store.state.search);
       return true;
     },
+    handlePrint() {
+      console.log("Local handle Print");
+      this.$store.dispatch("handlePrint");
+    },
   },
   data() {
     return {
@@ -51,11 +68,22 @@ export default {
       keys: this.$store.state.agrupar,
       sortBy: "name",
       sortDesc: false,
-      // methods: {
-      //   handleSearch() {
-      //     return true;
-      //   },
-      // },
+      // heading: "Sample PDF Generator",
+      // moreText: [
+      //   "This is another few sentences of text to look at it.",
+      //   "Just testing the paragraphs to see how they format.",
+      //   "jsPDF likes arrays for sentences.",
+      //   "Do paragraphs wrap properly?",
+      //   "Yes, they do!",
+      //   "What does it look like?",
+      //   "Not bad at all.",
+      // ],
+      // items: [
+      //   { title: "Item 1", body: "I am item 1 body text" },
+      //   { title: "Item 2", body: "I am item 2 body text" },
+      //   { title: "Item 3", body: "I am item 3 body text" },
+      //   { title: "Item 4", body: "I am item 4 body text" },
+      // ],
     };
   },
 };
