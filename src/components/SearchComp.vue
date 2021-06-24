@@ -58,8 +58,9 @@ export default {
       return true;
     },
     handlePrint() {
-      console.log("Local handle Print");
-      this.$store.dispatch("handlePrint");
+      // console.log("Local handle Print");
+      // this.$store.dispatch("handlePrint");
+      window.print();
     },
   },
   data() {

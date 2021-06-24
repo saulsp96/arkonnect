@@ -37,7 +37,7 @@ export default {
       console.log("Sheet obtenido: " + this.$store.state.sheets[i].title);
       this.$store.state.Rows[i] = await this.$store.state.sheets[i].getRows();
       //console.log(this.$store.state.Rows[i]);This is
-      console.log(this.$store.state.Rows[i]);
+      //console.log(this.$store.state.Rows[i]);
     }
     this.$store.getters.returnTotalesMov;
     this.$store.getters.returnKDratio;
@@ -61,7 +61,7 @@ export default {
       this.$store.state.sheets[i] = documento.sheetsByIndex[i];
       console.log("Sheet obtenido: " + this.$store.state.sheets[i].title);
       this.$store.state.Rows[i] = await this.$store.state.sheets[i].getRows();
-      console.log(this.$store.state.Rows[i]);
+      //console.log(this.$store.state.Rows[i]);
     }
     this.$store.getters.returnKDratio;
     this.$store.state.isWaiting = true;
