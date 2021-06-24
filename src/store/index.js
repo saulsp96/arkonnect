@@ -244,11 +244,11 @@ export default new Vuex.Store({
       var dataItem = {};
       var dataCards = [];
       var Titles = [
-        "Ingreso MU",
-        "Ingreso MT",
-        "Ingreso OPS",
+        // "Ingreso MU",
+        // "Mov de area",
+        "Ingreso a OPS",
         "Mov equipo MT",
-        "Baja arkus",
+        "Baja de arkus",
       ];
       var Title = "";
       //var SumCount = 0;
@@ -258,28 +258,28 @@ export default new Vuex.Store({
         var usuario = state.movimientos[i];
         Title = usuario["Tipo Movimiento"];
         switch (Title) {
-          case "Ingreso MU":
+          // case "Ingreso MU":
+          //   RoleCount[0] = RoleCount[0] + 1;
+          //   state.ingresos = state.ingresos + 1;
+          //   break;
+          // case "Ingreso MT":
+          //   RoleCount[1] = RoleCount[1] + 1;
+          //   state.ingresos = state.ingresos + 1;
+          //   break;
+          case "Ingreso a OPS":
             RoleCount[0] = RoleCount[0] + 1;
             state.ingresos = state.ingresos + 1;
             break;
-          case "Ingreso MT":
+          case "Mov de area":
             RoleCount[1] = RoleCount[1] + 1;
-            state.ingresos = state.ingresos + 1;
             break;
-          case "Ingreso OPS":
+          case "Baja de arkus":
             RoleCount[2] = RoleCount[2] + 1;
-            state.ingresos = state.ingresos + 1;
-            break;
-          case "Mov equipo MT":
-            RoleCount[3] = RoleCount[3] + 1;
-            break;
-          case "Baja arkus":
-            RoleCount[4] = RoleCount[4] + 1;
             state.egresos = state.egresos + 1;
             break;
         }
       }
-      for (var x = 0; x <= 4; x++) {
+      for (var x = 0; x <= 2; x++) {
         dataItem = { id: x, title: Titles[x], summary: RoleCount[x] };
         dataCards[x] = dataItem;
       }
