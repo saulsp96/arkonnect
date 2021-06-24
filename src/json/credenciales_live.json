@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "seguimiento-interno-mt-admin",
+  "private_key_id": "00f2df16bcb938be1e8f303737219b545c9e74cb",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC79NfKUN0vy76V\nqp3yZBMNja9iabfR4DHVDXJSdyGCnN+XnI8Mj5AVacP2QQ150szbRwANUs0LxhtP\n4jqDHngqcVMHETsEUuRPbBb1Muc+1gYZJKtVxv9VWV7FrR6MeWpSwxqPnHH836Jw\nbE74VrOAz7TKVicCtEQAjltOnShkqczQhp4T8e8KBE05Ans1Hgt3rdRe6ERV/aov\nVwkvDButC0t4e633MYwItzjqt4CyLCCt4rpcbJXNece+EMQvIac652n4mpgUsAVb\nar7VyRSkEKXnfyL8WP1QoaiLmk0nMNAi8b5646pFWxRiqwP8CWQ6fPDrZQDOLXHK\n1396fv47AgMBAAECggEATSo2Na+BP5AsTJHhipQfZl8W9BZnC1k53DhLCSQzs8Xn\n3fy+le+SvdfQRhdrCurKg/PgR5gI6p6ItAEy+IXX28Tuy2X9jsbhSOIdgslFOvzv\nP/9YAD1UspugVxO+CPoH9rZ2/yLBgYnmzLUKrtYZl/auSKuaFHghuwC2582Judlw\nJo0OuAsLdSJJb75uwMb55e+K9Ro7ElM8iAug5K2rqeL8jkytqU/uRGCgMQQlEw/h\nPKklc8X99j/kceY4Fxs7D5wV8t+t80Uzk6sjwvTAvhT1apqduYEup84AK5rqVweo\nIgEwmhyurEsjz3ecm+U87OoyxHU3BZScejTHaNKbYQKBgQDkFhq/pa6rS+BFSoeV\nMsHBcUQcvaSccVIQuLNBlMdc91jdgEWYO66dzwPFEjVXE+xke8t/Fe2UN8RXCmC9\nnC5IX6j/VqTHlTvWFQBkIOIsxtCD+nydxKiaKCFZNvM8q+jZD14eVMMwt5DfRXRh\ndWS2RDgwuY18ptj/tdb1KefteQKBgQDS9Xn+2JTKX2pvAzRB3uliZI5Ib6TRPQn+\nyCPuuUfhq65ywLD51fJoXviBDi/IxFr7bLJzpnJaskEDThC2lOXqUEM3Uh3/DaXw\nILsU6BXuBZOF93AC54Kju+UvGVQFe7MlSFnimwe12SDYs9XLYuhqbQTpKIloAHnH\nyCZzPHUAUwKBgGWdB2usF4YO9qpICuFITJOur2aSglyEC8iRUKL98leTho6fz+GD\nbUa27HoGo6bYpG8by8wha8ellJ4mbHTsuJ3bqEGhSyXzcUXt80+oarsCE/FITe5H\np8mN6VWCqpi0CbdyJj8jChaRIUSm/7NPhn/BIrtqXwNSnchGLa7pbX8ZAoGAR/9t\njnOefF8KNS8Tw7NvVZxaDxDDYIIDikgGM3BavwNX+2QWQn4pSEO5blpIJq4VGyAi\n22OgPaH+nEElZRr2SPzxo8zL3gNrccPJ9b2r1lti2OL1AJjAtl7nPibXzTNFleDW\nhIdCn2amVi8yNULhbYkdlvG1y5/18CA4NzYX/G8CgYAJE+uVSpSJ/hxEADIVCL2p\nXHIVcf32cEVHaKA/G7nmJdfmZvgzL3esyNYg/S0jRWL9J+A2y/y583I7vIz5T9vk\nQfW7dcX1iaIn4dBIF8/jOuxC+KDiV7YfpQ9fPfNnHc6XMLAAUqB1v76J1V7jBrUH\nK0te5anDdI4leTlfiTQtSw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "mindteams-admin@seguimiento-interno-mt-admin.iam.gserviceaccount.com",
+  "client_id": "115568953475535171542",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/mindteams-admin%40seguimiento-interno-mt-admin.iam.gserviceaccount.com"
+}
