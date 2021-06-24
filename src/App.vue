@@ -35,7 +35,7 @@ export default {
       this.$store.state.sheets[i] = documento.sheetsByIndex[i];
       console.log("Sheet obtenido: " + this.$store.state.sheets[i].title);
       this.$store.state.Rows[i] = await this.$store.state.sheets[i].getRows();
-      //console.log(this.$store.state.Rows[i]);
+      //console.log(this.$store.state.Rows[i]);This is
     }
     this.$store.getters.returnTotalesMov;
     this.$store.getters.returnKDratio;
