@@ -18,6 +18,7 @@ export default {
     HelloWorld,
   },
   beforeCreate: async function() {
+    //Modif on live branch
     console.log("This is beforeCreate");
     this.$store.getters.isUserLogged;
     const { GoogleSpreadsheet } = require("google-spreadsheet");
