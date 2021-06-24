@@ -169,12 +169,31 @@ export default new Vuex.Store({
       state.usuarios = state.Rows[0];
       var dataItem = {};
       var dataCards = [];
-      var Titles = ["DEV", "QA", "SM", "PO"];
+      var Titles = ["DEV", "QA", "SM", "PO", "DS", "UI/UX"];
       var Title = "";
       var TechSkills = "";
       //var SumCount = 0;
-      var RoleCount = [0, 0, 0, 0];
-      var techSkillsCount = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+      var RoleCount = [0, 0, 0, 0, 0, 0];
+      var techSkillsCount = [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+      ];
       //usersTable = this.$store.getters.returnTalent;
       for (var i = 0; i < state.usuarios.length; i++) {
         var usuario = state.usuarios[i];
@@ -221,10 +240,30 @@ export default new Vuex.Store({
               techSkillsCount[11] = techSkillsCount[11] + 1;
             }
             break;
+          case "DS":
+            RoleCount[4] = RoleCount[4] + 1;
+            if (TechSkills == "Jr") {
+              techSkillsCount[12] = techSkillsCount[12] + 1;
+            } else if (TechSkills == "Mid") {
+              techSkillsCount[13] = techSkillsCount[13] + 1;
+            } else if (TechSkills == "Sr") {
+              techSkillsCount[14] = techSkillsCount[14] + 1;
+            }
+            break;
+          case "UI/UX":
+            RoleCount[5] = RoleCount[5] + 1;
+            if (TechSkills == "Jr") {
+              techSkillsCount[15] = techSkillsCount[15] + 1;
+            } else if (TechSkills == "Mid") {
+              techSkillsCount[16] = techSkillsCount[16] + 1;
+            } else if (TechSkills == "Sr") {
+              techSkillsCount[17] = techSkillsCount[17] + 1;
+            }
+            break;
         }
       }
       var indice = 0;
-      for (var x = 0; x < 4; x++) {
+      for (var x = 0; x < 6; x++) {
         dataItem = {
           id: x,
           title: Titles[x],
