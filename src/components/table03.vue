@@ -46,21 +46,21 @@
           </td>
           <td>
             <v-text-field
-              v-model="filtro"
+              v-model="filtro2"
               type="number"
               label="Ingles"
             ></v-text-field>
           </td>
           <td>
             <v-text-field
-              v-model="filtro"
+              v-model="filtro3"
               type="text"
               label="Main #1"
             ></v-text-field>
           </td>
           <td>
             <v-text-field
-              v-model="filtro"
+              v-model="filtro4"
               type="text"
               label="Main #2"
             ></v-text-field>
@@ -90,6 +90,9 @@ export default {
     return {
       defaultRoleFilter: "",
       filtro: "",
+      filtro2: "",
+      filtro3: "",
+      filtro4: "",
       Headers: this.$store.state.headersRC,
       Talento: this.$store.getters.returnTalent,
     };
