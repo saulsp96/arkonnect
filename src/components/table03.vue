@@ -40,6 +40,7 @@
           <td>
             <v-text-field
               v-model="filtro"
+              @input="handletechSkillsFilter()"
               type="text"
               label="TechSkills"
             ></v-text-field>
@@ -47,13 +48,15 @@
           <td>
             <v-text-field
               v-model="filtro2"
-              type="number"
+              @input="handleInglesFilter()"
+              type="text"
               label="Ingles"
             ></v-text-field>
           </td>
           <td>
             <v-text-field
               v-model="filtro3"
+              @input="handleMain1Filter()"
               type="text"
               label="Main #1"
             ></v-text-field>
@@ -61,6 +64,7 @@
           <td>
             <v-text-field
               v-model="filtro4"
+              @input="handleMain2Filter()"
               type="text"
               label="Main #2"
             ></v-text-field>
@@ -75,10 +79,105 @@
 export default {
   methods: {
     handleRoleFilter() {
-      console.log("This is handleRoleFilter");
+      var Talento = this.$store.getters.returnTalent;
       this.$store.state.defaultRoleFilter = this.defaultRoleFilter;
-      console.log(this.$store.state.defaultRoleFilter);
-      return true;
+      var lTalento = Talento.length;
+      var usersTable = [];
+      for (var i = 0; i < lTalento; i++) {
+        var usuario = Talento[i];
+        if (usuario != null) {
+          var rol = usuario["Role"];
+          var userReady = [];
+          if (rol == this.$store.state.defaultRoleFilter) {
+            userReady = usuario;
+            console.log(usuario);
+            usersTable[i] = userReady;
+          }
+        }
+      }
+      if (usersTable.length > 0) {
+        this.Talento = usersTable;
+      } else this.Talento = this.$store.getters.returnTalent;
+    },
+    handletechSkillsFilter() {
+      var Talento = this.$store.getters.returnTalent;
+      this.$store.state.defaultRoleFilter = this.filtro;
+      var lTalento = Talento.length;
+      var usersTable = [];
+      for (var i = 0; i < lTalento; i++) {
+        var usuario = Talento[i];
+        if (usuario != null) {
+          var rol = usuario["TechSkills"];
+          var userReady = [];
+          if (rol == this.$store.state.defaultRoleFilter) {
+            userReady = usuario;
+            usersTable[i] = userReady;
+          }
+        }
+      }
+      if (usersTable.length > 0) {
+        this.Talento = usersTable;
+      } else this.Talento = this.$store.getters.returnTalent;
+    },
+    handleInglesFilter() {
+      var Talento = this.$store.getters.returnTalent;
+      this.$store.state.defaultRoleFilter = this.filtro2;
+      var lTalento = Talento.length;
+      var usersTable = [];
+      for (var i = 0; i < lTalento; i++) {
+        var usuario = Talento[i];
+        if (usuario != null) {
+          var rol = usuario["Ingles"];
+          var userReady = [];
+          if (rol == this.$store.state.defaultRoleFilter) {
+            userReady = usuario;
+            usersTable[i] = userReady;
+          }
+        }
+      }
+      if (usersTable.length > 0) {
+        this.Talento = usersTable;
+      } else this.Talento = this.$store.getters.returnTalent;
+    },
+    handleMain1Filter() {
+      var Talento = this.$store.getters.returnTalent;
+      this.$store.state.defaultRoleFilter = this.filtro3;
+      var lTalento = Talento.length;
+      var usersTable = [];
+      for (var i = 0; i < lTalento; i++) {
+        var usuario = Talento[i];
+        if (usuario != null) {
+          var rol = usuario["Main #1"];
+          var userReady = [];
+          if (rol == this.$store.state.defaultRoleFilter) {
+            userReady = usuario;
+            usersTable[i] = userReady;
+          }
+        }
+      }
+      if (usersTable.length > 0) {
+        this.Talento = usersTable;
+      } else this.Talento = this.$store.getters.returnTalent;
+    },
+    handleMain2Filter() {
+      var Talento = this.$store.getters.returnTalent;
+      this.$store.state.defaultRoleFilter = this.filtro4;
+      var lTalento = Talento.length;
+      var usersTable = [];
+      for (var i = 0; i < lTalento; i++) {
+        var usuario = Talento[i];
+        if (usuario != null) {
+          var rol = usuario["Main #2"];
+          var userReady = [];
+          if (rol == this.$store.state.defaultRoleFilter) {
+            userReady = usuario;
+            usersTable[i] = userReady;
+          }
+        }
+      }
+      if (usersTable.length > 0) {
+        this.Talento = usersTable;
+      } else this.Talento = this.$store.getters.returnTalent;
     },
     getColor(Ingles) {
       if (Ingles < 5) return "red";
