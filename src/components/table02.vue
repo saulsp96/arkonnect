@@ -6,7 +6,6 @@
       :search="this.$store.state.search"
       :items-per-page="Talento.length"
       class="elevation-1"
-      :custom-filter="filterOnlyCapsText"
       :sort-by="['Role', 'TechSkills']"
       :sort-desc="[false, true]"
       multi-sort

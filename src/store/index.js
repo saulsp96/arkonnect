@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import { jsPDF } from "jspdf";
+import "jspdf-autotable";
 import router from "../router/index";
 
 Vue.use(Vuex);
@@ -14,6 +15,7 @@ export default new Vuex.Store({
     isWaiting: false,
     isGeneral: true,
     usuarios: [],
+    talent: [],
     movimientos: [],
     username: "",
     ingresos: 0.0,
@@ -140,17 +142,62 @@ export default new Vuex.Store({
   },
   mutations: {},
   actions: {
-    handlePrint: () => {
+    handlePrint() {
       console.log("This is action handlePrint");
-      const doc = new jsPDF({
-        orientation: "portrait",
-        format: "letter",
-        unit: "in",
+      let doc = new jsPDF("p", "pt");
+      // let doc = new jsPDF({
+      //   orientation: "landscape",
+      //   // format: "letter",
+      //   // unit: "in",
+      // });
+      var columns = [
+        {
+          text: "Nombre",
+          align: "center",
+          sortable: false,
+          value: "Nombre",
+        },
+        {
+          text: "Puesto",
+          sortable: true,
+          value: "Puesto",
+        },
+        {
+          text: "TechSkills",
+          sortable: true,
+          value: "TechSkills",
+        },
+        {
+          text: "Tipo Movimiento",
+          sortable: true,
+          value: "Tipo Movimiento",
+        },
+        {
+          text: "Fecha",
+          sortable: true,
+          value: "Fecha",
+        },
+        {
+          text: "Notas",
+          sortable: false,
+          value: "Notas",
+        },
+      ];
+      console.log(columns);
+      var rows = [];
+      console.log(rows);
+      // doc.setFontSize(16).text("Gestion talento MIND", 1.0, 1.0);
+      // doc.setLineWidth(0.01).line(0.5, 1.1, 8.0, 1.1);
+      doc.autoTable(columns, rows, {
+        startY: 20,
+        styles: {
+          fontSize: 50,
+          cellWidth: "wrap",
+        },
+        columnStyles: {
+          1: { cellWidth: "wrap" },
+        },
       });
-
-      doc.setFontSize(16).text("Gestion talento MIND", 0.5, 1.0);
-      doc.setLineWidth(0.01).line(0.5, 1.1, 8.0, 1.1);
-
       doc.save("talentomind" + new Date().valueOf() + ".pdf");
       return true;
     },
@@ -363,6 +410,7 @@ export default new Vuex.Store({
       for (var i = 0; i < state.movimientos.length; i++) {
         var movimiento = state.movimientos[i];
         var movReady = [];
+        console.log(movimiento);
         movReady = movimiento;
         movimientosTable[i] = movReady;
       }
