@@ -73,10 +73,14 @@ export default new Vuex.Store({
       { text: "CV", value: "CV", sortable: false },
     ],
     defaultRoleFilter: "",
+    defaultNombreFilter: "",
+    defaultNotasFilter: "",
     defaultTeckSkillsFilter: "",
     defaultInglesFilter: "",
     defaultMain1Filter: "",
     defaultMain2Filter: "",
+    defaultMovFilter: "",
+    filtroOficina: "",
     headersRC: [
       {
         text: "Role",
@@ -99,43 +103,73 @@ export default new Vuex.Store({
         align: "center",
         sortable: true,
         value: "ActivoMT",
+        width: "150px",
       },
-      { text: "Disponible OPS", value: "DisponibleparaOPS", sortable: true },
-      { text: "Oficina", value: "Oficina", sortable: false },
+      {
+        text: "Disponible OPS",
+        value: "DisponibleparaOPS",
+        sortable: true,
+        width: "150px",
+      },
+      { text: "Oficina", value: "Oficina", sortable: false, width: "140px" },
       { text: "CV", value: "CV", sortable: false },
       { text: "Correo", value: "Correo", sortable: false },
-      { text: "Nombre", value: "Nombre", sortable: false },
+      { text: "Nombre", value: "Nombre", sortable: false, width: "250px" },
       { text: "Role", value: "Role" },
-      { text: "TechSkills", value: "TechSkills" },
-      { text: "Ingles", value: "Ingles" },
+      { text: "TechSkills", value: "TechSkills", width: "150px" },
+      { text: "Ingles", value: "Ingles", width: "120px" },
       {
         text: "Calificacion OPS",
         value: "Calificacion \nOPS",
         sortable: false,
+        width: "220px",
       },
-      { text: "Equipo", value: "Equipo" },
-      { text: "Equipo futuro", value: "Equipo \nFuturo", sortable: false },
+      { text: "Equipo", value: "Equipo", width: "170px" },
+      {
+        text: "Equipo futuro",
+        value: "Equipo \nFuturo",
+        sortable: false,
+        width: "170px",
+      },
       {
         text: "Fecha Inicio equipo actual",
         value: "Fecha Inicio \nequipo actual",
+        width: "150px",
         sortable: false,
       },
-      { text: "Main #1", value: "Main #1" },
-      { text: "Main #2", value: "Main #2" },
-      { text: "Secondary #1", value: "Secondary \n#1", sortable: false },
-      { text: "Secondary #2", value: "Secondary \n#2", sortable: false },
-      { text: "Secondary #3", value: "Secondary \n#3", sortable: false },
+      { text: "Main #1", value: "Main #1", width: "130px" },
+      { text: "Main #2", value: "Main #2", width: "130px" },
+      {
+        text: "Secondary #1",
+        value: "Secondary \n#1",
+        sortable: false,
+        width: "170px",
+      },
+      {
+        text: "Secondary #2",
+        value: "Secondary \n#2",
+        sortable: false,
+        width: "170px",
+      },
+      {
+        text: "Secondary #3",
+        value: "Secondary \n#3",
+        sortable: false,
+        width: "170px",
+      },
       {
         text: "Target Tech Main \n(Training)",
         sortable: false,
         value: "Target Tech Main \n(Training)",
+        width: "220px",
       },
       {
-        text: "Next Tech Secondary",
+        text: "Next Tech Secondary \n(Training)",
         value: "Next Tech Secondary \n(Training)",
         sortable: false,
+        width: "220px",
       },
-      { text: "Notes", value: "Notas", sortable: false },
+      { text: "Notas", value: "Notas", sortable: false, width: "150px" },
     ],
   },
   mutations: {},
@@ -335,6 +369,9 @@ export default new Vuex.Store({
           usuario["DisponibleparaOPS"] == "TRUE"
         ) {
           userReady = usuario;
+          if (userReady["Ingles"] == "") {
+            userReady["Ingles"] = "NA";
+          }
           usersTable[i] = userReady;
         }
       }
@@ -353,6 +390,9 @@ export default new Vuex.Store({
         isOPS = userReady["DisponibleparaOPS"] == "TRUE";
         userReady["ActivoMT"] = isActive;
         userReady["DisponibleparaOPS"] = isOPS;
+        if (userReady["Ingles"] == "") {
+          userReady["Ingles"] = "NA";
+        }
         usersTable[i] = userReady;
       }
       return usersTable;

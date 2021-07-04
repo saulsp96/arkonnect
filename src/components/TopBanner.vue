@@ -2,7 +2,7 @@
   <v-card class="grey lighten-4" max-height="30">
     <v-toolbar flat class="grey lighten-4" max-height="50">
       <v-row>
-        <h2>Talento Interno Arkus Nexus</h2>
+        <h2>Talento Interno MIND</h2>
       </v-row>
       <v-row justify="end" v-if="this.$store.state.isWaiting"> </v-row>
     </v-toolbar>

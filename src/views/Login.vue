@@ -12,7 +12,7 @@
 
       <v-col class="mb-4">
         <h1 class="display-2 font-weight-bold mb-3">
-          Arkonnect
+          Gestión de talento
         </h1>
 
         <p class="subheading font-weight-regular">
@@ -51,7 +51,7 @@
       </v-col>
       <v-col class="mb-6" cols="12">
         <h5 class="mb-3">
-          © Arkus Nexus. Todos los derechos reservados.
+          © MIND. Todos los derechos reservados.
         </h5>
 
         <v-row justify="center">
@@ -69,13 +69,12 @@
     </v-row>
     <v-dialog v-model="dialog" max-width="290">
       <v-card>
-        <v-card-title class="headline">
-          Credenciales Invalidas(':
-        </v-card-title>
+        <v-card-title class="headline"> Credenciales Invalidas</v-card-title>
 
         <v-card-text>
-          Intenta de nuevo o ponte en contacto con el admin del sitio :p
-        </v-card-text>
+          Intenta de nuevo o ponte en contacto con el admin del
+          sitio.</v-card-text
+        >
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn color="primary" text @click="dialog = false">

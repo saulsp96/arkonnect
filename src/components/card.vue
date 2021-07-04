@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-row>
+    <v-row justify="center">
       <div v-for="item in items" :key="item.id">
         <v-col>
           <v-card :class="`rounded-lg`" width="200" height="170">
@@ -74,7 +74,7 @@ export default {
   font-size: 30px;
 }
 .v-card {
-  padding-right: 3px;
-  padding-left: 8px;
+  margin-right: 20px;
+  margin-left: 20px;
 }
 </style>
