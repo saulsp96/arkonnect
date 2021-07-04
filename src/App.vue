@@ -18,8 +18,6 @@ export default {
     HelloWorld,
   },
   beforeCreate: async function() {
-    //Modif on live branch
-    console.log("This is beforeCreate");
     this.$store.getters.isUserLogged;
     const { GoogleSpreadsheet } = require("google-spreadsheet");
 
@@ -34,10 +32,7 @@ export default {
 
     for (i = 0; i < documento.sheetCount; i++) {
       this.$store.state.sheets[i] = documento.sheetsByIndex[i];
-      console.log("Sheet obtenido: " + this.$store.state.sheets[i].title);
       this.$store.state.Rows[i] = await this.$store.state.sheets[i].getRows();
-      //console.log(this.$store.state.Rows[i]);This is
-      //console.log(this.$store.state.Rows[i]);
     }
     this.$store.getters.returnTotalesMov;
     this.$store.getters.returnKDratio;
@@ -45,7 +40,6 @@ export default {
   },
   beforeUpdate: async function() {
     this.$store.getters.isUserLogged;
-    console.log("This is beforeUpdate");
     const { GoogleSpreadsheet } = require("google-spreadsheet");
 
     const credenciales = require("./json/credenciales_live.json");
@@ -59,9 +53,7 @@ export default {
 
     for (i = 0; i < documento.sheetCount; i++) {
       this.$store.state.sheets[i] = documento.sheetsByIndex[i];
-      console.log("Sheet obtenido: " + this.$store.state.sheets[i].title);
       this.$store.state.Rows[i] = await this.$store.state.sheets[i].getRows();
-      //console.log(this.$store.state.Rows[i]);
     }
     this.$store.getters.returnKDratio;
     this.$store.state.isWaiting = true;

@@ -332,7 +332,7 @@ export default {
 
         for (var i = 0; i < lTalento; i++) {
           var usuario = Talento[i];
-          if (usuario != null) {
+          if (usuario != null && usuario["Fecha"] != null) {
             var nombre = usuario["Fecha"];
             var arrayDate = nombre.split("/");
             nombre = nombre.replace("/", "-");
@@ -785,7 +785,7 @@ export default {
         var usersTable = [];
         for (var i = 0; i < lTalento; i++) {
           var usuario = Talento[i];
-          if (usuario != null) {
+          if (usuario != null && usuario["Notas"] != null) {
             var nombre = usuario["Notas"];
             nombre = this.handleAcentos(nombre.toUpperCase());
             nombre = nombre.replace(/\s/g, "");
