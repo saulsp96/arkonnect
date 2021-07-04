@@ -227,10 +227,6 @@ export default {
             var nombre = usuario["Tipo Movimiento"];
             nombre = this.handleAcentos(nombre.toUpperCase());
             nombre = nombre.replace(/\s/g, "");
-            console.log("This is mov:" + nombre);
-            console.log(
-              "This is filtro: " + this.$store.state.defaultMovFilter
-            );
             var userReady = [];
             if (
               nombre.includes(this.$store.state.defaultMovFilter) ||

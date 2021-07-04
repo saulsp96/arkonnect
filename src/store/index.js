@@ -32,6 +32,7 @@ export default new Vuex.Store({
         align: "center",
         sortable: false,
         value: "Nombre",
+        width: "280px",
       },
       {
         text: "Puesto",
