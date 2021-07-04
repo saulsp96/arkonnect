@@ -12,26 +12,9 @@
     ></v-text-field>
     <template v-if="$vuetify.breakpoint.mdAndUp">
       <v-spacer></v-spacer>
+      <!-- 
+      <v-spacer></v-spacer> -->
 
-      <!-- <v-select
-        v-model="sortBy"
-        flat
-        solo-inverted
-        hide-details
-        :items="keys"
-        :search="search"
-        prepend-inner-icon="mdi-magnify"
-        label="Agrupar por"
-      ></v-select> -->
-      <v-spacer></v-spacer>
-      <!-- <v-btn-toggle v-model="sortDesc" mandatory>
-        <v-btn large depressed color="blue" :value="false">
-          <v-icon>mdi-arrow-up</v-icon>
-        </v-btn>
-        <v-btn large depressed color="blue" :value="true">
-          <v-icon>mdi-arrow-down</v-icon>
-        </v-btn>
-      </v-btn-toggle> -->
       <v-btn
         v-if="this.$store.state.isWaiting"
         v-on:click="handlePrint"
