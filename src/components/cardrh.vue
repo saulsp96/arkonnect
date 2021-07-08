@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-row>
+    <v-row justify="center">
       <div v-for="item in itemsRH" :key="item.id">
         <v-col>
           <v-card :class="`rounded-lg`" max-width="500" max-height="200">
@@ -56,9 +56,7 @@ export default {
   padding-bottom: 0px;
 }
 .v-card {
-  padding-top: 15px;
-  padding-right: 10px;
-  padding-bottom: 15px;
-  padding-left: 10px;
+  margin-right: 20px;
+  margin-left: 20px;
 }
 </style>
